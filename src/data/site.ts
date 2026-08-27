@@ -4,6 +4,9 @@ export const siteConfig = {
 	description:
 		"Criando Inteligência Artificial (IA) de forma ética e responsável.",
 	year: 2026,
+	email: "airespucrs@airespucrs.org",
+	location: "Porto Alegre, Rio Grande do Sul, Brasil",
+	streetAddress: "Av. Ipiranga, 6681 - Partenon, Porto Alegre - RS, 90619-900",
 };
 
 export interface SocialLink {

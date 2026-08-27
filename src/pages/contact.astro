@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { siteConfig } from "@/data/site";
+import logo from "@/assets/aires_logo_no_bg.avif";
+
+const description = "Entre em contato com a AIRES na PUCRS.";
+---
+
+<Layout title={`Contato | ${siteConfig.name}`} description={description}>
+	<div class='flex min-h-screen flex-col'>
+		<SiteHeader />
+
+		<main class='flex-1'>
+			<div
+				class='mx-auto max-w-7xl px-6 py-12 min-[420px]:px-7 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-24 xl:px-16 xl:py-28'
+			>
+				<h1
+					class='text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl'
+				>
+					AIRES na PUCRS
+				</h1>
+
+				<div
+					class='mt-5 space-y-1 text-base text-pretty text-muted-foreground sm:mt-4 sm:text-lg'
+				>
+					<p>
+						Nossa sede física se localiza na{" "}
+						<a
+							href='https://portal.pucrs.br/ensino/escola-de-humanidades/'
+							target='_blank'
+							rel='noreferrer noopener'
+							class='font-medium text-primary underline-offset-4 hover:underline'
+						>
+							Escola de Humanidades
+						</a>{" "}
+						da PUCRS.
+					</p>
+					<p>{siteConfig.streetAddress}</p>
+				</div>
+
+				<div
+					class='mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-16'
+				>
+					<div>
+						<h2
+							class='text-2xl font-medium tracking-tight text-primary md:text-3xl'
+						>
+							Junte-se à AIRES na PUCRS
+						</h2>
+
+						<div
+							class='mt-5 space-y-4 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg'
+						>
+							<p>
+								A AIRES na PUCRS gostaria de convidar todos(as) interessados em
+								se juntar ao nosso capítulo a se tornarem membros da AIRES.
+							</p>
+							<p>
+								Nossa meta é tornar a AIRES na PUCRS uma local de encontro para
+								todas as pessoas (alunos da PUCRS, ex-alunos/Alumni, alunos de
+								outras Instituições de Ensino, programadores, entusiastas,
+								Professores, independentemente de seu nível de formação ou
+								experiência) interessadas em juntar esforços para avançarmos o
+								debate ético a respeito do desenvolvimento da IA.
+							</p>
+							<p>
+								Todos que quiserem fazer parte da AIRES PUCRS, serão bem-vindos!
+							</p>
+						</div>
+					</div>
+
+					<Image
+						src={logo}
+						alt='Uma imagem de uma mão humana colocando uma balança sobre mãos robóticas.'
+						class='mx-auto h-auto w-full max-w-64 sm:max-w-80 lg:max-w-96'
+					/>
+				</div>
+
+				<div class='mt-16 sm:mt-20'>
+					<h2
+						class='text-2xl font-medium tracking-tight text-primary md:text-3xl'
+					>
+						Contato
+					</h2>
+
+					<div class='mt-4 sm:mt-5'>
+						<ContactForm client:load />
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<SiteFooter />
+	</div>
+</Layout>
