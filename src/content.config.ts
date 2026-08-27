@@ -12,19 +12,49 @@ const collection = (name: string) =>
 				updatedDate: z.coerce.date().optional(),
 				coverImage: image().optional(),
 				draft: z.boolean().default(false),
+				signupForm: z.boolean().default(false),
 			}),
 	});
 
+const about = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/about" }),
+	schema: ({ image }) =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			publishDate: z.coerce.date(),
+			updatedDate: z.coerce.date().optional(),
+			coverImage: image().optional(),
+			draft: z.boolean().default(false),
+			directors: z
+				.array(
+					z.object({
+						name: z.string(),
+						role: z.string().optional(),
+						summary: z.string(),
+						lattes: z.string().url().optional(),
+						photo: image(),
+					}),
+				)
+				.optional(),
+			membersSection: z
+				.object({
+					title: z.string(),
+					body: z.string(),
+				})
+				.optional(),
+		}),
+});
+
 const projects = collection("projects");
 const technicalNotes = collection("technical-notes");
-const research = collection("research");
-const about = collection("about");
-const aires = collection("aires");
+const announcements = collection("announcements");
+const blog = collection("blog");
 
 export const collections = {
 	projects,
 	"technical-notes": technicalNotes,
-	research,
 	about,
-	aires,
+	announcements,
+	blog,
 };

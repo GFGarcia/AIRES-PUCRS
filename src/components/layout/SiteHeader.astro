@@ -2,7 +2,8 @@
 import Logo from "@/components/Logo.astro";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { MobileNav } from "@/components/layout/MobileNav";
-import { primaryNav } from "@/data/navigation";
+import { NavDropdownMenu } from "@/components/layout/NavDropdownMenu";
+import { isNavDropdown, primaryNav } from "@/data/navigation";
 
 const currentPath = Astro.url.pathname;
 ---
@@ -13,18 +14,22 @@ const currentPath = Astro.url.pathname;
 
 		<nav aria-label="Navegação principal" class="hidden xl:flex xl:items-center xl:gap-1">
 			{
-				primaryNav.map((link) => {
-					const isActive = currentPath === link.href;
+				primaryNav.map((item) => {
+					if (isNavDropdown(item)) {
+						return <NavDropdownMenu label={item.label} items={item.items} client:load />;
+					}
+
+					const isActive = currentPath === item.href;
 					return (
 						<a
-							href={link.href}
+							href={item.href}
 							aria-current={isActive ? "page" : undefined}
 							class:list={[
 								"rounded-md px-3.5 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-200 hover:bg-muted/80 focus-visible:bg-accent focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
 								isActive ? "bg-muted/80" : "bg-transparent",
 							]}
 						>
-							{link.label}
+							{item.label}
 						</a>
 					);
 				})
