@@ -8,8 +8,8 @@ O Encontro Diálogos Éticos em IA é uma parceria da AI Robotics Ethics Society
 
 Contamos com um(a) pesquisador(a) convidado(a) para apresentar suas considerações sobre um texto pré-selecionado, e depois oportunizamos o debate com os demais participantes.
 
-É possível acompanhar os encontros pela sala do [Zoom](#) de forma síncrona.
+É possível acompanhar os encontros pela sala do [Zoom](https://pucrs.zoom.us/j/92018866882?pwd=VE1Sczk2Wis3bzVwVHJ0VzVtZ0k1Zz09) de forma síncrona.
 
-Os encontros gravados ficam disponíveis no nosso canal no [YouTube](#).
+Os encontros gravados ficam disponíveis no nosso canal no [YouTube](https://www.youtube.com/@AIRESPUCRS).
 
-A divulgação mensal ocorre pelas redes: [Instagram](#) e [LinkedIn](#).
+A divulgação mensal ocorre pelas redes: [Instagram](https://www.instagram.com/airespucrs?igsh=MXMxeHlmMGNieTh0bg==) e [LinkedIn](https://www.linkedin.com/company/aires-pucrs/).
