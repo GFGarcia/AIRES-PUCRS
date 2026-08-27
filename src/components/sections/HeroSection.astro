@@ -1,0 +1,42 @@
+---
+import { ButtonLink } from "@/components/ButtonLink";
+import HeroIllustration from "@/components/sections/HeroIllustration.astro";
+---
+
+<section class="mx-auto max-w-7xl px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-20 sm:py-28 lg:py-32">
+	<div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+		<div class="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:fill-mode-both motion-safe:duration-700 motion-safe:ease-out">
+			<h1 class="text-3xl min-[420px]:text-4xl leading-[1.05] font-bold tracking-tight text-balance text-primary sm:text-5xl">
+				Bem-vindo à<br />
+				<span class="text-4xl min-[420px]:text-5xl sm:text-6xl font-bold">AIRES<sup class="relative align-super text-[0.4em]">®</sup> PUCRS</span>
+			</h1>
+
+			<p class="mt-5 text-xl font-semibold text-pretty text-foreground sm:text-2xl">
+				Criando Inteligência Artificial (IA) de forma ética e responsável
+			</p>
+
+			<div class="mt-8 space-y-5 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg">
+				<p>
+					A AI Robotics Ethics Society (AIRES) se dedica na educação dos líderes da IA de amanhã em
+					princípios éticos, de modo a assegurar que a IA seja criada de forma ética e responsável.
+				</p>
+				<p>
+					Somos o primeiro capítulo internacional da AIRES, localizado na Pontifícia
+					Universidade Católica do Rio Grande do Sul (PUCRS), Brasil.
+				</p>
+			</div>
+
+			<ButtonLink
+				href="/contact"
+				size="lg"
+				variant="outline"
+				showArrow
+				className="rounded-md mt-12 border-primary text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground"
+			>
+				Junte-se à AIRES PUCRS
+			</ButtonLink>
+		</div>
+
+		<HeroIllustration />
+	</div>
+</section>
