@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+
+import logo from '../assets/aires_logo_no_bg.avif';
+
+interface Props {
+	class?: string;
+	iconOnly?: boolean;
+}
+
+const { class: className, iconOnly = false } = Astro.props;
+---
+
+<a
+	href="/"
+	class:list={["flex items-center gap-2 sm:gap-3 shrink-0 transition-opacity duration-200 hover:opacity-80", className]}
+	aria-label="AIRES PUCRS — página inicial"
+>
+	<Image src={logo} alt="AIRES PUCRS logo" class="size-10 sm:size-12 shrink-0 object-contain" />
+	{
+		!iconOnly && (
+			<span class="text-lg font-medium tracking-tight text-foreground ">
+				AI Robotics Ethics Society<sup class="text-[0.6em] font-normal">®</sup>
+			</span>
+		)
+	}
+</a>

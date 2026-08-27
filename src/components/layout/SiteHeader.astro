@@ -1,0 +1,41 @@
+---
+import Logo from "@/components/Logo.astro";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { MobileNav } from "@/components/layout/MobileNav";
+import { primaryNav } from "@/data/navigation";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 border-b border-border/80 bg-background/85 backdrop-blur-md">
+	<div class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
+		<Logo />
+
+		<nav aria-label="Navegação principal" class="hidden xl:flex xl:items-center xl:gap-1">
+			{
+				primaryNav.map((link) => {
+					const isActive = currentPath === link.href;
+					return (
+						<a
+							href={link.href}
+							aria-current={isActive ? "page" : undefined}
+							class:list={[
+								"rounded-md px-3.5 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-200 hover:bg-muted/80 focus-visible:bg-accent focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+								isActive ? "bg-muted/80" : "bg-transparent",
+							]}
+						>
+							{link.label}
+						</a>
+					);
+				})
+			}
+		</nav>
+
+		<div class="flex items-center gap-1">
+			<MobileNav links={primaryNav} client:load />
+			<div class="hidden xl:block">
+				<LanguageSwitcher client:load />
+			</div>
+		</div>
+	</div>
+</header>

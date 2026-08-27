@@ -1,0 +1,68 @@
+---
+import DiscordIcon from "@/components/icons/DiscordIcon.astro";
+import InstagramIcon from "@/components/icons/InstagramIcon.astro";
+import { primaryNav } from "@/data/navigation";
+import { siteConfig, socialLinks } from "@/data/site";
+
+const iconComponents = {
+	instagram: InstagramIcon,
+	discord: DiscordIcon,
+} as const;
+---
+
+<footer class="border-t border-border bg-muted">
+	<div class="mx-auto max-w-7xl px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-16 sm:py-20">
+		<div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+			<div>
+				<div class="max-w-md">
+					<p class="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
+						AIRES<sup class="text-[0.55em] font-normal">®</sup> PUCRS
+					</p>
+					<div class="mt-3 sm:mt-4 h-0.5 w-20 sm:w-24 bg-primary"></div>
+				</div>
+
+				<nav
+					aria-label="Navegação do rodapé"
+					class="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:flex lg:flex-wrap lg:gap-12"
+				>
+					{
+						primaryNav.map((link) => (
+							<a
+								href={link.href}
+								class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+							>
+								{link.label}
+							</a>
+						))
+					}
+				</nav>
+			</div>
+
+			<div class="lg:pt-1">
+				<p class="text-xs font-semibold tracking-widest text-muted-foreground uppercase">Social</p>
+				<div class="mt-4 flex items-center gap-4 sm:gap-5">
+					{
+						socialLinks.map((social) => {
+							const Icon = iconComponents[social.icon];
+							return (
+								<a
+									href={social.href}
+									aria-label={social.label}
+									class="inline-flex -m-1.5 items-center justify-center rounded-full p-1.5 text-foreground transition-all duration-200 hover:text-primary"
+								>
+									<Icon class="size-6" />
+								</a>
+							);
+						})
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="border-t border-border">
+		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground sm:px-8 md:px-10 lg:px-12 xl:px-16">
+			©{siteConfig.year} by the {siteConfig.fullName}
+		</p>
+	</div>
+</footer>
