@@ -28,7 +28,7 @@ const entries = (await getCollection(collection, ({ data }) => !data.draft)).sor
 
 		<main class="flex-1">
 			<section class="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-28 md:px-10 lg:px-12 xl:px-16">
-				<h1 class="text-4xl font-bold tracking-tight text-primary sm:text-5xl">{title}</h1>
+				<h1 class="text-4xl font-medium tracking-tight text-primary sm:text-5xl">{title}</h1>
 				<p class="mt-4 max-w-2xl text-lg text-pretty text-muted-foreground">{description}</p>
 
 				{
@@ -45,7 +45,7 @@ const entries = (await getCollection(collection, ({ data }) => !data.draft)).sor
 										<h2 class="text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
 											{entry.data.title}
 										</h2>
-										<p class="mt-2 text-sm leading-relaxed text-muted-foreground">{entry.data.description}</p>
+										<p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{entry.data.description}</p>
 									</a>
 								</li>
 							))}
