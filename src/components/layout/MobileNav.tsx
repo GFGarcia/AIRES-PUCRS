@@ -8,7 +8,6 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import {
 	Sheet,
@@ -18,9 +17,9 @@ import {
 	SheetTrigger,
 } from "@/components/ui/sheet";
 import { languages } from "@/data/languages";
-import type { NavLink } from "@/data/navigation";
+import { isNavDropdown, type NavItem } from "@/data/navigation";
 
-export function MobileNav({ links }: { links: NavLink[] }) {
+export function MobileNav({ links }: { links: NavItem[] }) {
 	const [open, setOpen] = useState(false);
 	const currentLanguage = languages[0];
 
@@ -78,16 +77,54 @@ export function MobileNav({ links }: { links: NavLink[] }) {
 				<Separator />
 
 				<nav className='flex flex-col gap-1 px-2 pb-2'>
-					{links.map((link) => (
-						<a
-							key={link.href}
-							href={link.href}
-							onClick={() => setOpen(false)}
-							className='rounded-md px-3 py-1.5 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground'
-						>
-							{link.label}
-						</a>
-					))}
+					{links.map((item) =>
+						isNavDropdown(item) ? (
+							<details
+								key={item.label}
+								className='group rounded-md px-3 py-1.5'
+							>
+								<summary className='flex cursor-pointer list-none items-center justify-between text-base font-medium text-foreground [&::-webkit-details-marker]:hidden'>
+									{item.label}
+									<ChevronDown className='size-4 text-muted-foreground transition-transform group-open:rotate-180' />
+								</summary>
+								<div className='mt-1 flex flex-col gap-0.5 pl-2'>
+									{item.items.length === 0 ? (
+										<span className='px-3 py-1.5 text-sm text-muted-foreground'>
+											Em breve
+										</span>
+									) : (
+										item.items.map((sub) => (
+											<a
+												key={sub.href}
+												href={sub.href}
+												target={
+													sub.href.startsWith("http") ? "_blank" : undefined
+												}
+												rel={
+													sub.href.startsWith("http")
+														? "noopener noreferrer"
+														: undefined
+												}
+												onClick={() => setOpen(false)}
+												className='rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground'
+											>
+												{sub.label}
+											</a>
+										))
+									)}
+								</div>
+							</details>
+						) : (
+							<a
+								key={item.href}
+								href={item.href}
+								onClick={() => setOpen(false)}
+								className='rounded-md px-3 py-1.5 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-accent-foreground'
+							>
+								{item.label}
+							</a>
+						),
+					)}
 				</nav>
 			</SheetContent>
 		</Sheet>

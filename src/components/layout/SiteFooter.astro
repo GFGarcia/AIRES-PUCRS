@@ -1,13 +1,15 @@
 ---
 import DiscordIcon from "@/components/icons/DiscordIcon.astro";
 import InstagramIcon from "@/components/icons/InstagramIcon.astro";
-import { primaryNav } from "@/data/navigation";
+import { isNavDropdown, primaryNav, type NavLink } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
 
 const iconComponents = {
 	instagram: InstagramIcon,
 	discord: DiscordIcon,
 } as const;
+
+const footerLinks = primaryNav.filter((item): item is NavLink => !isNavDropdown(item));
 ---
 
 <footer class="border-t border-border bg-muted">
@@ -26,7 +28,7 @@ const iconComponents = {
 					class="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:flex lg:flex-wrap lg:gap-12"
 				>
 					{
-						primaryNav.map((link) => (
+						footerLinks.map((link) => (
 							<a
 								href={link.href}
 								class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -61,7 +63,7 @@ const iconComponents = {
 	</div>
 
 	<div class="border-t border-border">
-		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground sm:px-8 md:px-10 lg:px-12 xl:px-16">
+		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
 			©{siteConfig.year} by the {siteConfig.fullName}
 		</p>
 	</div>
