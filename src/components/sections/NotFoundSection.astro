@@ -1,0 +1,23 @@
+---
+import { ButtonLink } from "@/components/ButtonLink";
+import { defaultLocale, localizePath, useTranslations } from "@/i18n/utils";
+
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
+---
+
+<section class="mx-auto flex max-w-7xl flex-col items-center px-6 py-24 text-center min-[420px]:px-7 sm:px-8 sm:py-32 md:px-10 lg:px-12 xl:px-16">
+	<p class="text-6xl font-bold tracking-tight text-primary sm:text-7xl">{t("notFound.code")}</p>
+	<h1 class="mt-4 text-2xl font-bold text-balance text-foreground sm:text-3xl">{t("notFound.heading")}</h1>
+	<p class="mt-3 max-w-md text-base text-pretty text-muted-foreground sm:text-lg">{t("notFound.description")}</p>
+
+	<ButtonLink
+		href={localizePath(currentLocale, "/")}
+		size="lg"
+		variant="outline"
+		showArrow
+		className="rounded-md mt-10 border-primary text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground"
+	>
+		{t("notFound.cta")}
+	</ButtonLink>
+</section>

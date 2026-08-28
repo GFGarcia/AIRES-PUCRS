@@ -1,0 +1,19 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import SiteHeader from '@/components/layout/SiteHeader.astro';
+import SiteFooter from '@/components/layout/SiteFooter.astro';
+import NotFoundSection from '@/components/sections/NotFoundSection.astro';
+import { defaultLocale, useTranslations } from '@/i18n/utils';
+
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
+---
+
+<Layout title={t('notFound.pageTitle')} description={t('notFound.metaDescription')}>
+	<div class="flex min-h-screen flex-col">
+		<SiteHeader />
+		<main class="flex flex-1 items-center">
+			<NotFoundSection />
+		</main>
+		<SiteFooter />
+	</div>
+</Layout>
