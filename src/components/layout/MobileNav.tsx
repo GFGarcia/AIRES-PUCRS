@@ -16,12 +16,22 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import { languages } from "@/data/languages";
+import type { Language } from "@/data/languages";
 import { isNavDropdown, type NavItem } from "@/data/navigation";
 
-export function MobileNav({ links }: { links: NavItem[] }) {
+const STORAGE_KEY = "aires-locale-selected";
+
+interface Props {
+	links: NavItem[];
+	openMenuLabel: string;
+	comingSoonLabel: string;
+	current: string;
+	languageOptions: (Language & { href: string })[];
+}
+
+export function MobileNav({ links, openMenuLabel, comingSoonLabel, current, languageOptions }: Props) {
 	const [open, setOpen] = useState(false);
-	const currentLanguage = languages[0];
+	const currentLanguage = languageOptions.find((option) => option.code === current) ?? languageOptions[0];
 
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
@@ -29,7 +39,7 @@ export function MobileNav({ links }: { links: NavItem[] }) {
 				<Button
 					variant='ghost'
 					size='icon'
-					aria-label='Abrir menu'
+					aria-label={openMenuLabel}
 					className='xl:hidden'
 				>
 					<Menu className='size-5' />
@@ -64,10 +74,22 @@ export function MobileNav({ links }: { links: NavItem[] }) {
 							</Button>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent align='start'>
-							{languages.map((language) => (
-								<DropdownMenuItem key={language.code} className='gap-2'>
-									<span aria-hidden='true'>{language.flag}</span>
-									{language.label}
+							{languageOptions.map((option) => (
+								<DropdownMenuItem key={option.code} disabled={option.code === current} asChild className='gap-2'>
+									<a
+										href={option.href}
+										onClick={() => {
+											setOpen(false);
+											try {
+												localStorage.setItem(STORAGE_KEY, option.code);
+											} catch {
+												// localStorage unavailable — navigation still works
+											}
+										}}
+									>
+										<span aria-hidden='true'>{option.flag}</span>
+										{option.label}
+									</a>
 								</DropdownMenuItem>
 							))}
 						</DropdownMenuContent>
@@ -90,7 +112,7 @@ export function MobileNav({ links }: { links: NavItem[] }) {
 								<div className='mt-1 flex flex-col gap-0.5 pl-2'>
 									{item.items.length === 0 ? (
 										<span className='px-3 py-1.5 text-sm text-muted-foreground'>
-											Em breve
+											{comingSoonLabel}
 										</span>
 									) : (
 										item.items.map((sub) => (

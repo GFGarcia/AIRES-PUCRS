@@ -1,0 +1,13 @@
+---
+import CollectionEntry from "@/components/collections/CollectionEntry.astro";
+import DiretoriaEntry from "@/components/collections/DiretoriaEntry.astro";
+import { getLocalizedStaticPaths } from "@/lib/i18n-content";
+
+export async function getStaticPaths() {
+	return getLocalizedStaticPaths("about", "en");
+}
+
+const { entry } = Astro.props;
+---
+
+{entry.data.directors ? <DiretoriaEntry entry={entry} /> : <CollectionEntry entry={entry} />}

@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import SiteHeader from "@/components/layout/SiteHeader.astro";
+import SiteFooter from "@/components/layout/SiteFooter.astro";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { siteConfig } from "@/data/site";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
+import logo from "@/assets/aires_logo_no_bg.avif";
+
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
+---
+
+<Layout title={`${t("contact.pageTitle")} | ${siteConfig.name}`} description={t("contact.metaDescription")}>
+	<div class='flex min-h-screen flex-col'>
+		<SiteHeader />
+
+		<main class='flex-1'>
+			<div
+				class='mx-auto max-w-7xl px-6 py-12 min-[420px]:px-7 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-24 xl:px-16 xl:py-28'
+			>
+				<h1
+					class='text-3xl font-medium tracking-tight text-primary sm:text-4xl md:text-5xl'
+				>
+					{t("contact.heading")}
+				</h1>
+
+				<div
+					class='mt-5 space-y-1 text-base text-pretty text-muted-foreground sm:mt-4 sm:text-lg'
+				>
+					<p>
+						{t("contact.locationIntro")}{" "}
+						<a
+							href='https://portal.pucrs.br/ensino/escola-de-humanidades/'
+							target='_blank'
+							rel='noreferrer noopener'
+							class='font-medium text-primary underline-offset-4 hover:underline'
+						>
+							{t("contact.locationLinkText")}
+						</a>{" "}
+						{t("contact.locationSuffix")}
+					</p>
+					<p>{siteConfig.streetAddress}</p>
+				</div>
+
+				<div
+					class='mt-12 grid items-center gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-16'
+				>
+					<div>
+						<h2
+							class='text-2xl font-medium tracking-tight text-primary md:text-3xl'
+						>
+							{t("contact.joinHeading")}
+						</h2>
+
+						<div
+							class='mt-5 space-y-4 text-base leading-relaxed text-pretty text-muted-foreground sm:text-lg'
+						>
+							<p>{t("contact.joinP1")}</p>
+							<p>{t("contact.joinP2")}</p>
+							<p>{t("contact.joinP3")}</p>
+						</div>
+					</div>
+
+					<Image
+						src={logo}
+						alt={t("contact.imageAlt")}
+						class='mx-auto h-auto w-full max-w-64 sm:max-w-80 lg:max-w-96'
+					/>
+				</div>
+
+				<div class='mt-16 sm:mt-20'>
+					<h2
+						class='text-2xl font-medium tracking-tight text-primary md:text-3xl'
+					>
+						{t("contact.contactHeading")}
+					</h2>
+
+					<div class='mt-4 sm:mt-5'>
+						<ContactForm
+							namePlaceholder={t("form.contact.namePlaceholder")}
+							emailPlaceholder={t("form.contact.emailPlaceholder")}
+							subjectPlaceholder={t("form.contact.subjectPlaceholder")}
+							messagePlaceholder={t("form.contact.messagePlaceholder")}
+							submitLabel={t("form.contact.submit")}
+							client:load
+						/>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<SiteFooter />
+	</div>
+</Layout>

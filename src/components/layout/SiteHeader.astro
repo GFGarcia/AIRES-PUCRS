@@ -3,23 +3,52 @@ import Logo from "@/components/Logo.astro";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdownMenu } from "@/components/layout/NavDropdownMenu";
-import { isNavDropdown, primaryNav } from "@/data/navigation";
+import { isNavDropdown, getPrimaryNav, type NavItem } from "@/data/navigation";
+import { languages } from "@/data/languages";
+import { defaultLocale, localizeHref, localizePath, useTranslations } from "@/i18n/utils";
 
-const currentPath = Astro.url.pathname;
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
+
+const localePrefix = currentLocale === defaultLocale ? "" : `/${currentLocale}`;
+const pathname = Astro.url.pathname;
+const unlocalizedPath =
+	localePrefix && pathname.startsWith(localePrefix) ? pathname.slice(localePrefix.length) || "/" : pathname;
+
+function localizeItem(item: NavItem): NavItem {
+	if (isNavDropdown(item)) {
+		return { ...item, items: item.items.map((sub) => ({ ...sub, href: localizeHref(currentLocale, sub.href) })) };
+	}
+	return { ...item, href: localizeHref(currentLocale, item.href) };
+}
+
+const primaryNav = getPrimaryNav(t).map(localizeItem);
+
+const languageOptions = languages.map((language) => ({
+	...language,
+	href: localizePath(language.code, unlocalizedPath),
+}));
 ---
 
 <header class="sticky top-0 z-40 border-b border-border/80 bg-background/85 backdrop-blur-md">
 	<div class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
 		<Logo />
 
-		<nav aria-label="Navegação principal" class="hidden xl:flex xl:items-center xl:gap-1">
+		<nav aria-label={t("nav.ariaMain")} class="hidden xl:flex xl:items-center xl:gap-1">
 			{
 				primaryNav.map((item) => {
 					if (isNavDropdown(item)) {
-						return <NavDropdownMenu label={item.label} items={item.items} client:load />;
+						return (
+							<NavDropdownMenu
+								label={item.label}
+								items={item.items}
+								comingSoonLabel={t("nav.comingSoon")}
+								client:load
+							/>
+						);
 					}
 
-					const isActive = currentPath === item.href;
+					const isActive = pathname === item.href;
 					return (
 						<a
 							href={item.href}
@@ -37,9 +66,16 @@ const currentPath = Astro.url.pathname;
 		</nav>
 
 		<div class="flex items-center gap-1">
-			<MobileNav links={primaryNav} client:load />
+			<MobileNav
+				links={primaryNav}
+				openMenuLabel={t("nav.openMenu")}
+				comingSoonLabel={t("nav.comingSoon")}
+				current={currentLocale}
+				languageOptions={languageOptions}
+				client:load
+			/>
 			<div class="hidden xl:block">
-				<LanguageSwitcher client:load />
+				<LanguageSwitcher current={currentLocale} options={languageOptions} client:load />
 			</div>
 		</div>
 	</div>

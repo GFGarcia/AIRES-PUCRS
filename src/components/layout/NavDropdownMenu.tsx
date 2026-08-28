@@ -12,10 +12,11 @@ import type { NavLink } from "@/data/navigation";
 interface Props {
 	label: string;
 	items: NavLink[];
+	comingSoonLabel: string;
 	active?: boolean;
 }
 
-export function NavDropdownMenu({ label, items, active }: Props) {
+export function NavDropdownMenu({ label, items, comingSoonLabel, active }: Props) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -32,7 +33,7 @@ export function NavDropdownMenu({ label, items, active }: Props) {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align='start' className='w-full'>
 				{items.length === 0 ? (
-					<DropdownMenuItem disabled>Em breve</DropdownMenuItem>
+					<DropdownMenuItem disabled>{comingSoonLabel}</DropdownMenuItem>
 				) : (
 					items.map((item) => (
 						<DropdownMenuItem
