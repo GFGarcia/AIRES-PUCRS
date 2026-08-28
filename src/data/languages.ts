@@ -1,7 +1,10 @@
 export interface Language {
-	code: string;
+	code: "pt" | "en";
 	label: string;
 	flag: string;
 }
 
-export const languages: Language[] = [{ code: "PT-BR", label: "Português", flag: "🇧🇷" }];
+export const languages: Language[] = [
+	{ code: "pt", label: "Português", flag: "🇧🇷" },
+	{ code: "en", label: "English", flag: "🇺🇸" },
+];

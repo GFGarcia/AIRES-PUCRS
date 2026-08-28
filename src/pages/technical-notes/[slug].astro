@@ -1,14 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-
 import CollectionEntry from "@/components/collections/CollectionEntry.astro";
+import { getLocalizedStaticPaths } from "@/lib/i18n-content";
 
 export async function getStaticPaths() {
-	const entries = await getCollection("technical-notes");
-	return entries.map((entry) => ({
-		params: { slug: entry.id },
-		props: { entry },
-	}));
+	return getLocalizedStaticPaths("technical-notes", "pt");
 }
 
 const { entry } = Astro.props;

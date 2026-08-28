@@ -5,7 +5,21 @@ import { Textarea } from "@/components/ui/textarea";
 
 // TODO: Implementar envio de formulário de contato
 
-export function ContactForm() {
+interface Props {
+	namePlaceholder: string;
+	emailPlaceholder: string;
+	subjectPlaceholder: string;
+	messagePlaceholder: string;
+	submitLabel: string;
+}
+
+export function ContactForm({
+	namePlaceholder,
+	emailPlaceholder,
+	subjectPlaceholder,
+	messagePlaceholder,
+	submitLabel,
+}: Props) {
 	return (
 		<form
 			action="#"
@@ -15,40 +29,40 @@ export function ContactForm() {
 			<div className="space-y-4">
 				<div className="space-y-1.5">
 					<Label htmlFor="contact-name" className="sr-only">
-						Nome
+						{namePlaceholder}
 					</Label>
-					<Input id="contact-name" name="nome" type="text" placeholder="Nome" />
+					<Input id="contact-name" name="nome" type="text" placeholder={namePlaceholder} />
 				</div>
 
 				<div className="space-y-1.5">
 					<Label htmlFor="contact-email" className="sr-only">
-						Email
+						{emailPlaceholder}
 					</Label>
-					<Input id="contact-email" name="email" type="email" placeholder="Email" required />
+					<Input id="contact-email" name="email" type="email" placeholder={emailPlaceholder} required />
 				</div>
 
 				<div className="space-y-1.5">
 					<Label htmlFor="contact-subject" className="sr-only">
-						Assunto
+						{subjectPlaceholder}
 					</Label>
-					<Input id="contact-subject" name="assunto" type="text" placeholder="Assunto" />
+					<Input id="contact-subject" name="assunto" type="text" placeholder={subjectPlaceholder} />
 				</div>
 
 				<div className="space-y-1.5">
 					<Label htmlFor="contact-message" className="sr-only">
-						Mensagem
+						{messagePlaceholder}
 					</Label>
 					<Textarea
 						id="contact-message"
 						name="mensagem"
-						placeholder="Insira a sua mensagem aqui"
+						placeholder={messagePlaceholder}
 						required
 					/>
 				</div>
 			</div>
 
 			<Button type="submit" size="lg" className="mt-6 w-full sm:w-auto">
-				Enviar
+				{submitLabel}
 			</Button>
 		</form>
 	);

@@ -8,6 +8,7 @@ import SiteHeader from "@/components/layout/SiteHeader.astro";
 import SiteFooter from "@/components/layout/SiteFooter.astro";
 import icon from "@/assets/aires_logo_no_bg.avif";
 import { siteConfig } from "@/data/site";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
 
 interface Props {
 	entry: CollectionEntry<"about">;
@@ -16,6 +17,7 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const { title, description, directors, membersSection } = entry.data;
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
 
 <Layout title={`${title} | ${siteConfig.name}`} description={description}>
@@ -79,7 +81,7 @@ const { title, description, directors, membersSection } = entry.data;
 												rel='noopener noreferrer'
 												class='inline-flex items-center gap-1 rounded-md border border-primary px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground text-right'
 											>
-												Lattes <span aria-hidden='true'>›</span>
+												{t("diretoria.lattesLink")} <span aria-hidden='true'>›</span>
 											</a>
 										</div>
 									</div>

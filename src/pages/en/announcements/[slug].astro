@@ -1,0 +1,12 @@
+---
+import CollectionEntry from "@/components/collections/CollectionEntry.astro";
+import { getLocalizedStaticPaths } from "@/lib/i18n-content";
+
+export async function getStaticPaths() {
+	return getLocalizedStaticPaths("announcements", "en");
+}
+
+const { entry } = Astro.props;
+---
+
+<CollectionEntry entry={entry} />

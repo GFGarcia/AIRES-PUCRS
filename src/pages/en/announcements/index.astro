@@ -1,0 +1,14 @@
+---
+import CollectionListing from "@/components/collections/CollectionListing.astro";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
+---
+
+<CollectionListing
+	collection="announcements"
+	basePath="en/announcements"
+	title={t("collections.announcements.title")}
+	description={t("collections.announcements.description")}
+	emptyMessage={t("collections.announcements.empty")}
+/>

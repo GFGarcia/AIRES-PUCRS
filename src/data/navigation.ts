@@ -1,4 +1,5 @@
 import { researchLinks } from "@/data/research";
+import type { useTranslations } from "@/i18n/utils";
 
 export interface NavLink {
 	label: string;
@@ -16,18 +17,24 @@ export function isNavDropdown(item: NavItem): item is NavDropdown {
 	return "items" in item;
 }
 
-export const aboutLinks: NavLink[] = [
-	{ label: "Diretoria", href: "/about/board" },
-	{ label: "Missão AIRES", href: "/about/mission" },
-];
+type T = ReturnType<typeof useTranslations>;
 
-export const primaryNav: NavItem[] = [
-	{ label: "Home", href: "/" },
-	{ label: "Projetos", href: "/projects" },
-	{ label: "Notas Técnicas", href: "/technical-notes" },
-	{ label: "Comunicados", href: "/announcements" },
-	{ label: "Pesquisa", items: researchLinks },
-	{ label: "Blog", href: "/blog" },
-	{ label: "Sobre", items: aboutLinks },
-	{ label: "Contato", href: "/contact" },
-];
+export function getAboutLinks(t: T): NavLink[] {
+	return [
+		{ label: t("nav.aboutBoard"), href: "/about/board" },
+		{ label: t("nav.aboutMission"), href: "/about/mission" },
+	];
+}
+
+export function getPrimaryNav(t: T): NavItem[] {
+	return [
+		{ label: t("nav.home"), href: "/" },
+		{ label: t("nav.projects"), href: "/projects" },
+		{ label: t("nav.technicalNotes"), href: "/technical-notes" },
+		{ label: t("nav.announcements"), href: "/announcements" },
+		{ label: t("nav.research"), items: researchLinks },
+		{ label: t("nav.blog"), href: "/blog" },
+		{ label: t("nav.about"), items: getAboutLinks(t) },
+		{ label: t("nav.contact"), href: "/contact" },
+	];
+}

@@ -1,15 +1,21 @@
 ---
 import DiscordIcon from "@/components/icons/DiscordIcon.astro";
 import InstagramIcon from "@/components/icons/InstagramIcon.astro";
-import { isNavDropdown, primaryNav, type NavLink } from "@/data/navigation";
+import { isNavDropdown, getPrimaryNav, type NavLink } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
+import { defaultLocale, localizeHref, useTranslations } from "@/i18n/utils";
 
 const iconComponents = {
 	instagram: InstagramIcon,
 	discord: DiscordIcon,
 } as const;
 
-const footerLinks = primaryNav.filter((item): item is NavLink => !isNavDropdown(item));
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
+
+const footerLinks = getPrimaryNav(t)
+	.filter((item): item is NavLink => !isNavDropdown(item))
+	.map((link) => ({ ...link, href: localizeHref(currentLocale, link.href) }));
 ---
 
 <footer class="border-t border-border bg-muted">
@@ -24,7 +30,7 @@ const footerLinks = primaryNav.filter((item): item is NavLink => !isNavDropdown(
 				</div>
 
 				<nav
-					aria-label="Navegação do rodapé"
+					aria-label={t("nav.ariaFooter")}
 					class="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:flex lg:flex-wrap lg:gap-12"
 				>
 					{
@@ -41,7 +47,7 @@ const footerLinks = primaryNav.filter((item): item is NavLink => !isNavDropdown(
 			</div>
 
 			<div class="lg:pt-1">
-				<p class="text-xs font-semibold tracking-widest text-muted-foreground uppercase">Social</p>
+				<p class="text-xs font-semibold tracking-widest text-muted-foreground uppercase">{t("footer.social")}</p>
 				<div class="mt-4 flex items-center gap-4 sm:gap-5">
 					{
 						socialLinks.map((social) => {
@@ -64,7 +70,7 @@ const footerLinks = primaryNav.filter((item): item is NavLink => !isNavDropdown(
 
 	<div class="border-t border-border">
 		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
-			©{siteConfig.year} by the {siteConfig.fullName}
+			{t("footer.copyright", { year: siteConfig.year, fullName: siteConfig.fullName })}
 		</p>
 	</div>
 </footer>

@@ -7,6 +7,7 @@ import SiteHeader from "@/components/layout/SiteHeader.astro";
 import SiteFooter from "@/components/layout/SiteFooter.astro";
 import { OpenLetterSignupForm } from "@/components/announcements/OpenLetterSignupForm";
 import { siteConfig } from "@/data/site";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
 
 interface Props {
 	entry: CollectionEntry<CollectionKey>;
@@ -14,6 +15,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
 
 <Layout title={`${entry.data.title} | ${siteConfig.name}`} description={entry.data.description}>
@@ -29,7 +31,16 @@ const { Content } = await render(entry);
 					<Content />
 				</div>
 
-				{entry.data.signupForm && <OpenLetterSignupForm client:load />}
+				{entry.data.signupForm && (
+					<OpenLetterSignupForm
+						heading={t("form.signup.heading")}
+						namePlaceholder={t("form.signup.namePlaceholder")}
+						affiliationPlaceholder={t("form.signup.affiliationPlaceholder")}
+						emailPlaceholder={t("form.signup.emailPlaceholder")}
+						submitLabel={t("form.signup.submit")}
+						client:load
+					/>
+				)}
 			</article>
 		</main>
 

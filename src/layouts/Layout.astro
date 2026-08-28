@@ -1,16 +1,19 @@
 ---
 import '../styles/global.css';
-import { siteConfig } from '@/data/site';
+import { defaultLocale, locales, useTranslations } from '@/i18n/utils';
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = siteConfig.description } = Astro.props;
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
+const { title, description = t('site.description') } = Astro.props;
+const htmlLang = currentLocale === 'pt' ? 'pt-BR' : currentLocale;
 ---
 
-<html lang="pt-BR">
+<html lang={htmlLang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,5 +25,23 @@ const { title, description = siteConfig.description } = Astro.props;
 	</head>
 	<body class="min-h-screen antialiased">
 		<slot />
+		<script define:vars={{ currentLocale, locales: [...locales], defaultLocale }}>
+			const KEY = 'aires-locale-selected';
+			try {
+				const stored = localStorage.getItem(KEY);
+				if (!stored) {
+					const preferred = (navigator.language || '').toLowerCase();
+					const match = locales.find((l) => preferred.startsWith(l)) || defaultLocale;
+					localStorage.setItem(KEY, match);
+					if (currentLocale === defaultLocale && match !== defaultLocale) {
+						location.replace('/' + match + location.pathname + location.search);
+					}
+				} else if (stored !== currentLocale) {
+					localStorage.setItem(KEY, currentLocale);
+				}
+			} catch {
+				// localStorage unavailable (privacy mode, etc.) — skip auto-detection
+			}
+		</script>
 	</body>
 </html>

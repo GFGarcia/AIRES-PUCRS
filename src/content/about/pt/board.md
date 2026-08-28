@@ -6,32 +6,32 @@ directors:
   - name: "Rafaela Weber Mallmann"
     role: "Presidente"
     summary: "Pesquisadora de Pós-doutorado no Instituto Nacional de Ciência e Tecnologia em Inteligência Artificial e Sustentabilidade (INCT-IAS). Trabalha com temas envolvendo ética, filosofia política e governança em IA."
-    photo: "./directors/rafaela.avif"
+    photo: "../directors/rafaela.avif"
     lattes: "http://lattes.cnpq.br/0724129228002795"
 
   - name: "Ana Clara Santos Elesbão"
     summary: "Pós-doutora e Dra. em Ciências Criminais (PUCRS/Sevilla). Pesquisadora em tecnopolítica e controle social. Experiência em Direito e Criminologia."
-    photo: "./directors/ana.jpg"
+    photo: "../directors/ana.jpg"
     lattes: "http://lattes.cnpq.br/8309742466139774"
 
   - name: "Bernardo Bonifácio Ferreira"
     summary: "Mestrando em Direito na PUCRS (bolsista CAPES/PROEX). Trabalha com temas envolvendo IA, Visão Computacional, Discriminação Algorítmica e Proteção de Dados com ênfase em Direitos Fundamentais."
-    photo: "./directors/bernardo.jpg"
+    photo: "../directors/bernardo.jpg"
     lattes: "http://lattes.cnpq.br/1150870853634759"
 
   - name: "Guilherme Fernandes Garcia"
     summary: "Pesquisador no Instituto Nacional de Ciência e Tecnologia em Inteligência Artificial e Sustentabilidade (INCT-IAS). Mestrando em Filosofia (PUCRS) com foco em pesquisa de ética e IA. Desenvolvedor e Analista de Sistemas."
-    photo: "./directors/guilherme.jpg"
+    photo: "../directors/guilherme.jpg"
     lattes: "http://lattes.cnpq.br/4410682811345344"
 
   - name: "Raquel Medeiros Souza"
     summary: "Graduanda em Administração, pesquisadora em IA e entusiasta de tecnologia, gestão, sociedade e ética."
-    photo: "./directors/raquel.jpg"
+    photo: "../directors/raquel.jpg"
     lattes: "https://lattes.cnpq.br/8365838490713335"
 
   - name: "Uellinton Valentim Corsi"
     summary: "Doutorando e Mestre em Filosofia (PUCRS), pós-graduado (UFPI/PUCRS). Pesquisa ética, metafísica e justiça medieval. Professor e premiado em pesquisa."
-    photo: "./directors/uellinton.png"
+    photo: "../directors/uellinton.png"
     lattes: "http://lattes.cnpq.br/9252808194783358"
 membersSection:
   title: "Membros da AIRES"

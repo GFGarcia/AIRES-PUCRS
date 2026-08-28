@@ -1,11 +1,14 @@
 ---
 import CollectionListing from "@/components/collections/CollectionListing.astro";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
 
 <CollectionListing
 	collection="blog"
 	basePath="blog"
-	title="Blog de Pesquisa"
-	description="Fique por dentro dos conteúdos produzidos e gerenciados pelo AIRES."
-	emptyMessage="Nenhum conteúdo publicado no momento."
+	title={t("collections.blog.title")}
+	description={t("collections.blog.description")}
+	emptyMessage={t("collections.blog.empty")}
 />
