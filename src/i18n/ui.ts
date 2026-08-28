@@ -74,6 +74,13 @@ export const ui = {
 		"collections.announcements.empty": "Nenhum comunicado publicado no momento.",
 
 		"diretoria.lattesLink": "Lattes",
+
+		"notFound.pageTitle": "Página não encontrada",
+		"notFound.metaDescription": "A página que você procura não foi encontrada.",
+		"notFound.code": "404",
+		"notFound.heading": "Página não encontrada",
+		"notFound.description": "A página que você está procurando não existe ou foi movida.",
+		"notFound.cta": "Voltar para a página inicial",
 	},
 	en: {
 		"nav.home": "Home",
@@ -146,6 +153,13 @@ export const ui = {
 		"collections.announcements.empty": "No announcements published at the moment.",
 
 		"diretoria.lattesLink": "Lattes",
+
+		"notFound.pageTitle": "Page Not Found",
+		"notFound.metaDescription": "The page you are looking for was not found.",
+		"notFound.code": "404",
+		"notFound.heading": "Page not found",
+		"notFound.description": "The page you're looking for doesn't exist or has been moved.",
+		"notFound.cta": "Back to homepage",
 	},
 } as const;
 
