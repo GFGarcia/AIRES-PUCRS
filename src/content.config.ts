@@ -26,6 +26,7 @@ const about = defineCollection({
 			updatedDate: z.coerce.date().optional(),
 			coverImage: image().optional(),
 			draft: z.boolean().default(false),
+			signupForm: z.boolean().default(false),
 			directors: z
 				.array(
 					z.object({

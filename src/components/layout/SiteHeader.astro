@@ -5,9 +5,9 @@ import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdownMenu } from "@/components/layout/NavDropdownMenu";
 import { isNavDropdown, getPrimaryNav, type NavItem } from "@/data/navigation";
 import { languages } from "@/data/languages";
-import { defaultLocale, localizeHref, localizePath, unlocalizePath, useTranslations } from "@/i18n/utils";
+import { defaultLocale, localizeHref, localizePath, unlocalizePath, useTranslations, type Locale } from "@/i18n/utils";
 
-const currentLocale = Astro.currentLocale ?? defaultLocale;
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslations(currentLocale);
 
 const pathname = Astro.url.pathname;
