@@ -46,6 +46,9 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 					role='presentation'
 					width={256}
 					height={256}
+					densities={[1, 2]}
+					format='avif'
+					quality={45}
 					class='mx-auto mt-12 w-48 sm:w-56 md:w-64'
 				/>
 
@@ -59,6 +62,9 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 										alt={director.name}
 										width={160}
 										height={160}
+										densities={[1, 2]}
+										format='avif'
+										quality={45}
 										class='size-32 shrink-0 rounded-full object-cover ring-4 ring-border sm:size-36'
 									/>
 									<div class='text-center sm:text-left'>

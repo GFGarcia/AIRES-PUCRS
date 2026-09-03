@@ -51,6 +51,8 @@ export function MobileNav({ links, openMenuLabel, comingSoonLabel, current, lang
 						<img
 							src='/aires_logo_no_bg.avif'
 							alt=''
+							width={36}
+							height={36}
 							className='size-9 shrink-0 object-contain'
 						/>
 						AIRES PUCRS
