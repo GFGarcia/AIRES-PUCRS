@@ -59,6 +59,10 @@ export const ui = {
 		"form.signup.affiliationPlaceholder": "Afiliação/Instituição",
 		"form.signup.emailPlaceholder": "Email",
 		"form.signup.submit": "Assine",
+		"form.signup.submitting": "Enviando...",
+		"form.signup.duplicateError": "Este nome ou email já assinou esta carta.",
+		"form.signup.genericError": "Não foi possível registrar sua assinatura. Tente novamente mais tarde.",
+		"form.signup.success": "Obrigado por assinar! Sua assinatura foi registrada.",
 
 		"collections.blog.title": "Blog de Pesquisa",
 		"collections.blog.description": "Fique por dentro dos conteúdos produzidos e gerenciados pelo AIRES.",
@@ -141,6 +145,10 @@ export const ui = {
 		"form.signup.affiliationPlaceholder": "Affiliation/Institution",
 		"form.signup.emailPlaceholder": "Email",
 		"form.signup.submit": "Sign",
+		"form.signup.submitting": "Signing...",
+		"form.signup.duplicateError": "This name or email has already signed this letter.",
+		"form.signup.genericError": "We couldn't record your signature. Please try again later.",
+		"form.signup.success": "Thank you for signing! Your signature has been recorded.",
 
 		"collections.blog.title": "Research Blog",
 		"collections.blog.description": "Stay up to date with content produced and managed by AIRES.",
