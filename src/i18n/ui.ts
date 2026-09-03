@@ -53,6 +53,9 @@ export const ui = {
 		"form.contact.subjectPlaceholder": "Assunto",
 		"form.contact.messagePlaceholder": "Insira a sua mensagem aqui",
 		"form.contact.submit": "Enviar",
+		"form.contact.submitting": "Enviando...",
+		"form.contact.genericError": "Não foi possível enviar sua mensagem. Tente novamente mais tarde.",
+		"form.contact.success": "Mensagem enviada! Entraremos em contato em breve.",
 
 		"form.signup.heading": "Assine a nossa Carta Aberta!",
 		"form.signup.namePlaceholder": "Nome Completo",
@@ -139,6 +142,9 @@ export const ui = {
 		"form.contact.subjectPlaceholder": "Subject",
 		"form.contact.messagePlaceholder": "Enter your message here",
 		"form.contact.submit": "Send",
+		"form.contact.submitting": "Sending...",
+		"form.contact.genericError": "We couldn't send your message. Please try again later.",
+		"form.contact.success": "Message sent! We'll get back to you soon.",
 
 		"form.signup.heading": "Sign our Open Letter!",
 		"form.signup.namePlaceholder": "Full Name",
