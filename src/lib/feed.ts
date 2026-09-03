@@ -12,6 +12,13 @@ const FEED_COLLECTIONS = [
 
 /** Builds the locale's combined blog + announcements feed, newest first. */
 export async function buildFeed(locale: Locale, site: URL | undefined) {
+	// `site` is `Astro.site`, which comes from `site` in astro.config.mjs. Fail loudly
+	// rather than falling back to a hardcoded origin — a silent default would publish
+	// feed links pointing at the wrong domain.
+	if (!site) {
+		throw new Error("Astro.site is not configured; set `site` in astro.config.mjs or SITE_URL.");
+	}
+
 	const t = useTranslations(locale);
 	const localePrefix = locale === "pt" ? "" : `/${locale}`;
 
@@ -32,7 +39,7 @@ export async function buildFeed(locale: Locale, site: URL | undefined) {
 	return rss({
 		title: siteConfig.name,
 		description: t("site.description"),
-		site: site ?? "https://www.airespucrs.org",
+		site,
 		customData: `<language>${locale === "pt" ? "pt-BR" : "en"}</language>`,
 		items,
 	});
