@@ -1,0 +1,57 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Allow GITHUB_TOKEN to deploy to Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a queued run finish rather than cancelling it mid-deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+
+  build:
+    name: Build
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: withastro/action@v3
+        with:
+          node-version: 22
+        env:
+          PUBLIC_WEB3FORMS_OPEN_LETTER_SIGN_UP_KEY: ${{ secrets.PUBLIC_WEB3FORMS_OPEN_LETTER_SIGN_UP_KEY }}
+          PUBLIC_WEB3FORMS_CONTACT_KEY: ${{ secrets.PUBLIC_WEB3FORMS_CONTACT_KEY }}
+
+  deploy:
+    name: Deploy
+    # Only the default branch publishes; pull requests stop after build.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
