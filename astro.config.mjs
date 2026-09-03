@@ -11,7 +11,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import { publicImageAttrs } from './src/lib/public-image-attrs.mjs';
 // Canonical origin of the deployed site. Override per environment with SITE_URL
 // (e.g. a Netlify/Vercel deploy preview) — everything else derives from `Astro.site`.
-const site = process.env.SITE_URL ?? 'https://www.airespucrs.org';
+const site = process.env.SITE_URL ?? 'https://airespucrs.org';
 
 // https://astro.build/config
 export default defineConfig({
