@@ -4,7 +4,7 @@ description: "An essay on feminist epistemology and the implications of gender f
 publishDate: 2021-12-01
 ---
 
-![Can Women Be Cyborgs? Gender, Feminism, and Artificial Intelligence](/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)
+![Can Women Be Cyborgs? Gender, Feminism, and Artificial Intelligence](../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)
 
 [**_Camila Palhares Barbosa_**](mailto:camilabarbosa.ri@gmail.com)<br>
 _PhD in Philosophy from the Pontifícia Universidade Católica do Rio Grande do Sul_

@@ -4,7 +4,7 @@ description: "Aira-Instruct, uma nova série de modelos de linguagem afinados vi
 publishDate: 2023-06-28
 ---
 
-![Aira-Instruct 🤗](/blog/aira-instruct/cover.png)
+![Aira-Instruct 🤗](../../../assets/blog/aira-instruct/cover.png)
 
 Acabamos de tornar disponível uma versão aprimorada do nosso modelo de linguagem, [Aira](https://huggingface.co/nicholasKluge/Aira-Instruct-PT-1B7). Aira possui diversas iterações, de chatbots de domínio fechado à chatbots de domínio aberto afinados via [instruction-tuning](https://arxiv.org/abs/2203.02155) e RLHF ([Reinforcement Learning from Human Feedback](https://huggingface.co/blog/rlhf)).
 

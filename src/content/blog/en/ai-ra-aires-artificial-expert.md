@@ -4,7 +4,7 @@ description: "Meet Ai.ra, AIRES's expert chatbot on artificial intelligence, eth
 publishDate: 2022-06-04
 ---
 
-![Ai.ra - The AIRES Expert](/blog/ai-ra-aires-artificial-expert/cover.avif)
+![Ai.ra - The AIRES Expert](../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif)
 
 [Ai.ra](http://aira-expert.airespucrs.org/) is a **chatbot** (or chatterbot, though we could also call Ai.ra a **natural language processor**) — that is, a software application used to hold an online text-based chat conversation. Ai.ra was designed to simulate how a **human expert** would behave during a round of questions and answers (**Q&A**).
 

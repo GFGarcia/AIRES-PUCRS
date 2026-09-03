@@ -4,7 +4,7 @@ description: "The AIRES at PUCRS podcast about Artificial Intelligence, ethics, 
 publishDate: 2024-03-01
 ---
 
-![AIRESCast](/blog/airescast/airescast.avif)
+![AIRESCast](../../../assets/blog/airescast/airescast.avif)
 
 AIRESCast is the AIRES at PUCRS Podcast! Here we explore essential topics related to Artificial Intelligence. In each episode, we talk with researchers and experts about how AI impacts our lives, covering ethical dilemmas, interdisciplinarity, and technological advances. Our goal is to provide information and foster debate about the development and ethical application of AI.
 

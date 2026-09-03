@@ -8,7 +8,7 @@ import { defaultLocale, useTranslations } from '@/i18n/utils';
 const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
 
-<Layout title={t('notFound.pageTitle')} description={t('notFound.metaDescription')}>
+<Layout title={t('notFound.pageTitle')} description={t('notFound.metaDescription')} noindex>
 	<div class="flex min-h-screen flex-col">
 		<SiteHeader />
 		<main class="flex flex-1 items-center">

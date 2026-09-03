@@ -4,7 +4,7 @@ description: "The new version of Ai.ra and the AIRES Alignment Playground, tools
 publishDate: 2023-01-26
 ---
 
-![Chatbots and Language Model Playgrounds](/blog/chatbots-e-language-model-playgrounds/cover.png)
+![Chatbots and Language Model Playgrounds](../../../assets/blog/chatbots-e-language-model-playgrounds/cover.png)
 
 ## Ai.ra has a new look, with several improvements [🤖](https://emojipedia.org/robot/)
 
@@ -14,7 +14,7 @@ publishDate: 2023-01-26
 
 In our online version of **Ai.ra**, you can also chat with a fine-tuned/distilled version of **BlenderBot 3**, a large language model developed by [Meta AI](https://ai.facebook.com/). People interested in testing and evaluating such models can use our UI at the [following link](https://aira-expert.herokuapp.com/). **This tool was built for research and educational purposes only.**
 
-![](/blog/chatbots-e-language-model-playgrounds/content-1.gif)
+![](/blog/chatbots-e-language-model-playgrounds/content-1.webp)
 
 ## AIRES Alignment Playground 🎯
 
@@ -22,7 +22,7 @@ Another tool we're now making available is the **Alignment Playground**, a [purp
 
 “_Alignment is about the ability of ML models to robustly follow human instructions, and to understand the intentions of a human controller._”
 
-![](/blog/chatbots-e-language-model-playgrounds/content-2.gif)
+![](/blog/chatbots-e-language-model-playgrounds/content-2.webp)
 
 Our playground's implementation can be found in our repository, [Teeny-Tiny Castle 🏰](https://github.com/Nkluge-correa/teeny-tiny_castle). We hope these tools **can help spread knowledge and help researchers investigate the limitations and issues related to the use of language models** in **conversational** and **text-generation** tasks.
 

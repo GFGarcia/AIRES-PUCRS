@@ -4,7 +4,7 @@ description: "A technical post deconstructing the claim that LaMDA, Google's lan
 publishDate: 2022-06-21
 ---
 
-![Is LaMDA Sentient? TL;DR, No.](/blog/lamda-e-senciente-tl-dr-nao/cover.png)
+![Is LaMDA Sentient? TL;DR, No.](../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png)
 
 Recently, a Google engineer, [**Blake Lemoine**](https://www.theguardian.com/technology/2022/jun/12/google-engineer-ai-bot-sentient-blake-lemoine), was placed on leave after saying that an LLM (**Large Language Model**) trained by Google **_had become sentient._**
 
@@ -28,7 +28,7 @@ For a wonderful, illustrated explanation of how a Transformer model works, check
 
 We can think of the transformer as "**one big block**" that takes a sequence of tokens and outputs the "**most likely next token**" (depending on its sampling parameters):
 
-![](/blog/lamda-e-senciente-tl-dr-nao/content-1.gif)
+![](/blog/lamda-e-senciente-tl-dr-nao/content-1.webp)
 
 If you gave it a sequence like:
 

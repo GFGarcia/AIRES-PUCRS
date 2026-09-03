@@ -4,7 +4,7 @@ description: "Testando como modelos de linguagem pré-treinados podem produzir c
 publishDate: 2021-10-21
 ---
 
-![Alinhamento com Grandes Modelos de Linguagem Natural](/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)
+![Alinhamento com Grandes Modelos de Linguagem Natural](../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)
 
 Dentro do campo de pesquisa em IA, um dos principais problemas estudados é o processamento de linguagem natural. Natural Language Processing, (NLP), é uma subárea da ciência da computação focada em investigar problemas relacionados à geração e compreensão autônoma de línguas humanas naturais.
 

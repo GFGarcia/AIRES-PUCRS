@@ -18,7 +18,12 @@ const { Content } = await render(entry);
 const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
 
-<Layout title={`${entry.data.title} | ${siteConfig.name}`} description={entry.data.description}>
+<Layout
+	title={`${entry.data.title} | ${siteConfig.name}`}
+	description={entry.data.description}
+	image={entry.data.coverImage?.src}
+	article={{ publishDate: entry.data.publishDate, updatedDate: entry.data.updatedDate }}
+>
 	<div class="flex min-h-screen flex-col">
 		<SiteHeader />
 
@@ -38,7 +43,7 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 						affiliationPlaceholder={t("form.signup.affiliationPlaceholder")}
 						emailPlaceholder={t("form.signup.emailPlaceholder")}
 						submitLabel={t("form.signup.submit")}
-						client:load
+						client:visible
 					/>
 				)}
 			</article>

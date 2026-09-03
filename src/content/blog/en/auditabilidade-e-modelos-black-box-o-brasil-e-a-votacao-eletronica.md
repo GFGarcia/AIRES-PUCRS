@@ -4,7 +4,7 @@ description: "How redundancy, randomness, and auditing guarantee the robustness 
 publishDate: 2022-11-14
 ---
 
-![Auditability and Black-Box Models: Brazil and Electronic Voting](/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg)
+![Auditability and Black-Box Models: Brazil and Electronic Voting](../../../assets/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg)
 
 ## What's the problem with electronic voting? 🗳️
 

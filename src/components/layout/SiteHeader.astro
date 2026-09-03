@@ -5,15 +5,13 @@ import { MobileNav } from "@/components/layout/MobileNav";
 import { NavDropdownMenu } from "@/components/layout/NavDropdownMenu";
 import { isNavDropdown, getPrimaryNav, type NavItem } from "@/data/navigation";
 import { languages } from "@/data/languages";
-import { defaultLocale, localizeHref, localizePath, useTranslations } from "@/i18n/utils";
+import { defaultLocale, localizeHref, localizePath, unlocalizePath, useTranslations } from "@/i18n/utils";
 
 const currentLocale = Astro.currentLocale ?? defaultLocale;
 const t = useTranslations(currentLocale);
 
-const localePrefix = currentLocale === defaultLocale ? "" : `/${currentLocale}`;
 const pathname = Astro.url.pathname;
-const unlocalizedPath =
-	localePrefix && pathname.startsWith(localePrefix) ? pathname.slice(localePrefix.length) || "/" : pathname;
+const unlocalizedPath = unlocalizePath(currentLocale, pathname);
 
 function localizeItem(item: NavItem): NavItem {
 	if (isNavDropdown(item)) {
@@ -43,7 +41,7 @@ const languageOptions = languages.map((language) => ({
 								label={item.label}
 								items={item.items}
 								comingSoonLabel={t("nav.comingSoon")}
-								client:load
+								client:idle
 							/>
 						);
 					}
@@ -72,10 +70,10 @@ const languageOptions = languages.map((language) => ({
 				comingSoonLabel={t("nav.comingSoon")}
 				current={currentLocale}
 				languageOptions={languageOptions}
-				client:load
+				client:idle
 			/>
 			<div class="hidden xl:block">
-				<LanguageSwitcher current={currentLocale} options={languageOptions} client:load />
+				<LanguageSwitcher current={currentLocale} options={languageOptions} client:idle />
 			</div>
 		</div>
 	</div>

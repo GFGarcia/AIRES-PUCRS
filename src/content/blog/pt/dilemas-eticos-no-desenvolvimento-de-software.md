@@ -4,7 +4,7 @@ description: "Convite para participar da pesquisa sobre os dilemas éticos enfre
 publishDate: 2023-09-06
 ---
 
-![Dilemas éticos no Desenvolvimento de Software ⚖️🖥️](/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.gif)
+![Dilemas éticos no Desenvolvimento de Software ⚖️🖥️](/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.webp)
 
 Conforme a tecnologia continua a permear todas as facetas de nossas vidas, as considerações éticas que envolvem o desenvolvimento tecnológico se tornaram cada vez mais significativas. Neste cenário, convidamos todos nossos colegas das áreas de Tecnologia da Informação a participar de pesquisa **_"Dilemas éticos no Desenvolvimento de Software"._** Esta pesquisa tem o objetivo de se aprofundar na intrincada rede de desafios éticos que os desenvolvedores encontram em sua busca por inovação. Em suma, o que buscamos acrescentar à literatura neste estudo é responder à seguinte pergunta: _"Qual é a importância das diretrizes éticas nos campos relacionados à Tecnologia da Informação?"_
 

@@ -4,7 +4,7 @@ description: "Conheça a Ai.ra, o chatbot especialista da AIRES em inteligência
 publishDate: 2022-06-04
 ---
 
-![Ai.ra - A Expert da AIRES](/blog/ai-ra-aires-artificial-expert/cover.avif)
+![Ai.ra - A Expert da AIRES](../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif)
 
 [Ai.ra](http://aira-expert.airespucrs.org/) é um **chatbot** (ou chatterbot, mas também podemos dizer que Ai.ra é um **processador de linguagem natural**), ou seja, ela é um aplicativo de software utilizado para conduzir uma conversa de chat online via texto. Ai.ra foi concebida para simular a forma como um **humano (expert)** se comportaria durante uma rodada de perguntas e respostas (**Q&A**).
 
