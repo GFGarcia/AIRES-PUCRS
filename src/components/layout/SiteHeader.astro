@@ -26,6 +26,13 @@ const languageOptions = languages.map((language) => ({
 	...language,
 	href: localizePath(language.code, unlocalizedPath),
 }));
+
+// The `client:media` queries in the markup below deliberately mirror Tailwind's
+// `xl` breakpoint (`@media (width>=80rem)`), which is what `xl:hidden` /
+// `hidden xl:block` use to show one nav or the other. Same units, exact
+// complements — so the visible nav is always the hydrated one. A `px` value or an
+// off-by-one bound would leave a sliver of viewport widths where the nav is on
+// screen but dead. Change these together with the classes.
 ---
 
 <header class="sticky top-0 z-40 border-b border-border/80 bg-background/85 backdrop-blur-md">
@@ -41,7 +48,7 @@ const languageOptions = languages.map((language) => ({
 								label={item.label}
 								items={item.items}
 								comingSoonLabel={t("nav.comingSoon")}
-								client:idle
+								client:media="(width >= 80rem)"
 							/>
 						);
 					}
@@ -70,10 +77,10 @@ const languageOptions = languages.map((language) => ({
 				comingSoonLabel={t("nav.comingSoon")}
 				current={currentLocale}
 				languageOptions={languageOptions}
-				client:idle
+				client:media="(width < 80rem)"
 			/>
 			<div class="hidden xl:block">
-				<LanguageSwitcher current={currentLocale} options={languageOptions} client:idle />
+				<LanguageSwitcher current={currentLocale} options={languageOptions} client:media="(width >= 80rem)" />
 			</div>
 		</div>
 	</div>
