@@ -4,7 +4,7 @@ description: "Um ensaio sobre epistemologia feminista e as implicações de gên
 publishDate: 2021-12-01
 ---
 
-![Mulheres podem ser ciborgues? Gênero, Feminismo e Inteligência Artificial](/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)
+![Mulheres podem ser ciborgues? Gênero, Feminismo e Inteligência Artificial](../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)
 
 [**_Camila Palhares Barbosa_**](mailto:camilabarbosa.ri@gmail.com)<br>
 _Doutora em Filosofia pela Pontifícia Universidade Católica do Rio Grande do Sul_

@@ -4,7 +4,7 @@ description: "Meet 'Mirror, Mirror,' a science comic from the Data, Responsibly 
 publishDate: 2022-04-03
 ---
 
-![Data, Responsibly (Vol. 1) Mirror, Mirror](/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)
+![Data, Responsibly (Vol. 1) Mirror, Mirror](../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)
 
 **Mirror, Mirror** is a science comic authored by [Falaah Arif Khan](https://falaaharifkhan.github.io/research/) and [Julia Stoyanovich](http://stoyanovich.org/).
 

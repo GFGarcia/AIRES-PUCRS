@@ -31,6 +31,8 @@ export const ui = {
 		"hero.p1": "A AI Robotics Ethics Society (AIRES) se dedica na educação dos líderes da IA de amanhã em princípios éticos, de modo a assegurar que a IA seja criada de forma ética e responsável.",
 		"hero.p2": "Somos o primeiro capítulo internacional da AIRES, localizado na Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS), Brasil.",
 		"hero.cta": "Junte-se à AIRES PUCRS",
+		"hero.illustrationAlt":
+			"Ilustração de uma mão humana e uma mão robótica equilibrando uma balança, simbolizando a ética na Inteligência Artificial",
 
 		"contact.pageTitle": "Contato",
 		"contact.metaDescription": "Entre em contato com a AIRES na PUCRS.",
@@ -110,6 +112,8 @@ export const ui = {
 		"hero.p1": "The AI Robotics Ethics Society (AIRES) is dedicated to educating tomorrow's AI leaders in ethical principles, to help ensure that AI is created ethically and responsibly.",
 		"hero.p2": "We are the first international chapter of AIRES, based at the Pontifícia Universidade Católica do Rio Grande do Sul (PUCRS), Brazil.",
 		"hero.cta": "Join AIRES PUCRS",
+		"hero.illustrationAlt":
+			"Illustration of a human hand and a robotic hand balancing a scale, symbolizing ethics in Artificial Intelligence",
 
 		"contact.pageTitle": "Contact",
 		"contact.metaDescription": "Get in touch with AIRES at PUCRS.",

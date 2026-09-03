@@ -4,7 +4,7 @@ description: "Testing how pre-trained language models can produce undesired beha
 publishDate: 2021-10-21
 ---
 
-![Alignment with Large Natural Language Models](/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)
+![Alignment with Large Natural Language Models](../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)
 
 Within the field of AI research, one of the main problems studied is natural language processing. Natural Language Processing (NLP) is a subfield of computer science focused on investigating problems related to the autonomous generation and understanding of natural human languages.
 

@@ -4,7 +4,7 @@ description: "Conheça 'Espelho, Espelho', quadrinho científico da série Data,
 publishDate: 2022-04-03
 ---
 
-![Data, Responsibly (Vol. 1) Espelho, Espelho](/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)
+![Data, Responsibly (Vol. 1) Espelho, Espelho](../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)
 
 **Espelho, Espelho** é um quadrinho científico de autoria de [Falaah Arif Khan](https://falaaharifkhan.github.io/research/) e [Julia Stoyanovich](http://stoyanovich.org/).
 

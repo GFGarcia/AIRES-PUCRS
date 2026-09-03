@@ -4,7 +4,7 @@ description: "Como redundância, aleatoriedade e auditoria garantem a robustez e
 publishDate: 2022-11-14
 ---
 
-![Auditabilidade e Modelos Black-Box: O Brasil e a Votação Eletrônica](/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg)
+![Auditabilidade e Modelos Black-Box: O Brasil e a Votação Eletrônica](../../../assets/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg)
 
 ## Qual é o problema do voto eletrônico? 🗳️
 

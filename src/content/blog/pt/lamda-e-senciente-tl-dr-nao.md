@@ -4,7 +4,7 @@ description: "Um post técnico desconstruindo a alegação de que o LaMDA, model
 publishDate: 2022-06-21
 ---
 
-![LaMDA é senciente? TL:DR, Não.](/blog/lamda-e-senciente-tl-dr-nao/cover.png)
+![LaMDA é senciente? TL:DR, Não.](../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png)
 
 Recentemente, um engenheiro da Google, [**Blake Lemoine**](https://www.theguardian.com/technology/2022/jun/12/google-engineer-ai-bot-sentient-blake-lemoine), foi colocado em licença após dizer que um LLM (**Large Language Model**) treinado pela Google **_se tornou senciente._**
 
@@ -28,7 +28,7 @@ Para uma maravilhosa explicação ilustrativa de como funciona um modelo Transfo
 
 Podemos tomar o transformador como "**um grande bloco**" que pega uma seqüência de tokens e emite o "**próximo token mais provável**" (dependendo de seus parâmetros de amostragem):
 
-![](/blog/lamda-e-senciente-tl-dr-nao/content-1.gif)
+![](/blog/lamda-e-senciente-tl-dr-nao/content-1.webp)
 
 Se você lhe desse uma sequência como:
 
