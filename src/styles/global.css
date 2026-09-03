@@ -1,14 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
     --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
+    --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -33,6 +32,7 @@
     --color-secondary-foreground: var(--secondary-foreground);
     --color-secondary: var(--secondary);
     --color-primary-foreground: var(--primary-foreground);
+    --color-primary-strong: var(--primary-strong);
     --color-primary: var(--primary);
     --color-popover-foreground: var(--popover-foreground);
     --color-popover: var(--popover);
@@ -57,11 +57,14 @@
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
     --primary: oklch(0.657 0.1237 225.24);
+    /* Same hue as --primary, dark enough for body-size text on white (5.1:1). */
+    --primary-strong: oklch(0.52 0.1237 225.24);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
     --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
+    /* 0.556 rendered as #737373, which is only 4.34:1 on --muted. */
+    --muted-foreground: oklch(0.52 0 0);
     --accent: oklch(0.95 0.025 225.24);
     --accent-foreground: oklch(0.4 0.1 225.24);
     --destructive: oklch(0.577 0.245 27.325);
@@ -85,6 +88,7 @@
 }
 
 .dark {
+    --primary-strong: oklch(0.75 0.1237 225.24);
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);

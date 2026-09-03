@@ -25,6 +25,7 @@ export const ui = {
 		"footer.copyright": "©{year} by the {fullName}",
 
 		"site.description": "Criando Inteligência Artificial (IA) de forma ética e responsável.",
+		"feed.title": "Blog e comunicados",
 
 		"hero.welcome": "Bem-vindo à",
 		"hero.tagline": "Criando Inteligência Artificial (IA) de forma ética e responsável",
@@ -106,6 +107,7 @@ export const ui = {
 		"footer.copyright": "©{year} by the {fullName}",
 
 		"site.description": "Creating ethical and responsible Artificial Intelligence (AI).",
+		"feed.title": "Blog and announcements",
 
 		"hero.welcome": "Welcome to",
 		"hero.tagline": "Creating ethical and responsible Artificial Intelligence (AI)",

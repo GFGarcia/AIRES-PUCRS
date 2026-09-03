@@ -62,7 +62,7 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 										class='size-32 shrink-0 rounded-full object-cover ring-4 ring-border sm:size-36'
 									/>
 									<div class='text-center sm:text-left'>
-										<h2 class='text-xl lg:text-2xl font-medium text-primary'>
+										<h2 class='text-xl lg:text-2xl font-medium text-primary-strong'>
 											{director.name}
 										</h2>
 
@@ -79,7 +79,7 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 												href={director.lattes}
 												target='_blank'
 												rel='noopener noreferrer'
-												class='inline-flex items-center gap-1 rounded-md border border-primary px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-primary-foreground text-right'
+												class='inline-flex items-center gap-1 rounded-md border border-primary-strong px-3 py-1.5 text-sm font-medium text-primary-strong transition-colors hover:bg-primary hover:text-primary-foreground text-right'
 											>
 												{t("diretoria.lattesLink")} <span aria-hidden='true'>›</span>
 											</a>
