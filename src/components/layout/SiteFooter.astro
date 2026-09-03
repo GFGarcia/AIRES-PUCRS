@@ -3,14 +3,14 @@ import DiscordIcon from "@/components/icons/DiscordIcon.astro";
 import InstagramIcon from "@/components/icons/InstagramIcon.astro";
 import { isNavDropdown, getPrimaryNav, type NavLink } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
-import { defaultLocale, localizeHref, useTranslations } from "@/i18n/utils";
+import { defaultLocale, localizeHref, useTranslations, type Locale } from "@/i18n/utils";
 
 const iconComponents = {
 	instagram: InstagramIcon,
 	discord: DiscordIcon,
 } as const;
 
-const currentLocale = Astro.currentLocale ?? defaultLocale;
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslations(currentLocale);
 
 const footerLinks = getPrimaryNav(t)

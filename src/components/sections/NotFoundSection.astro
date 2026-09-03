@@ -1,8 +1,8 @@
 ---
 import { ButtonLink } from "@/components/ButtonLink";
-import { defaultLocale, localizePath, useTranslations } from "@/i18n/utils";
+import { defaultLocale, localizePath, useTranslations, type Locale } from "@/i18n/utils";
 
-const currentLocale = Astro.currentLocale ?? defaultLocale;
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslations(currentLocale);
 ---
 

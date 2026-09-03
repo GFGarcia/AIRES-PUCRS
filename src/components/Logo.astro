@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 
 import logo from '../assets/aires_logo_no_bg.avif';
-import { defaultLocale, localizePath, useTranslations } from '@/i18n/utils';
+import { defaultLocale, localizePath, useTranslations, type Locale } from '@/i18n/utils';
 
 interface Props {
 	class?: string;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { class: className, iconOnly = false } = Astro.props;
-const currentLocale = Astro.currentLocale ?? defaultLocale;
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslations(currentLocale);
 ---
 
