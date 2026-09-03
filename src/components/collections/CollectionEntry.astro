@@ -16,6 +16,26 @@ interface Props {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const t = useTranslations(Astro.currentLocale ?? defaultLocale);
+
+// Cross-locale identity for this document (drops the "pt/"/"en/" prefix from
+// entry.id) so a signature counts as "already signed" regardless of which
+// language the visitor reads the letter in.
+const slug = entry.id.split("/").slice(1).join("/");
+
+// The signatures list is plain markdown content (see the announcement's
+// "## Signatários"/"## Signatories" section) rather than structured
+// frontmatter, so it's parsed straight out of the raw body: every bullet of
+// the shape "- **Name**, _Affiliation_".
+let existingSignatories: { name: string; affiliation: string }[] = [];
+let signatoriesHeading: string | null = null;
+if (entry.data.signupForm) {
+	const headingMatch = entry.body?.match(/^##\s+(.+)$/m);
+	signatoriesHeading = headingMatch?.[1].trim() ?? null;
+
+	existingSignatories = [...(entry.body?.matchAll(/^-\s+\*\*(.+?)\*\*,\s*_(.+?)_\s*$/gm) ?? [])].map(
+		([, name, affiliation]) => ({ name, affiliation }),
+	);
+}
 ---
 
 <Layout
@@ -36,13 +56,21 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 					<Content />
 				</div>
 
-				{entry.data.signupForm && (
+				{entry.data.signupForm && signatoriesHeading && (
 					<OpenLetterSignupForm
 						heading={t("form.signup.heading")}
 						namePlaceholder={t("form.signup.namePlaceholder")}
 						affiliationPlaceholder={t("form.signup.affiliationPlaceholder")}
 						emailPlaceholder={t("form.signup.emailPlaceholder")}
 						submitLabel={t("form.signup.submit")}
+						submittingLabel={t("form.signup.submitting")}
+						duplicateErrorMessage={t("form.signup.duplicateError")}
+						genericErrorMessage={t("form.signup.genericError")}
+						successMessage={t("form.signup.success")}
+						slug={slug}
+						existingSignatories={existingSignatories}
+						signatoriesHeading={signatoriesHeading}
+						client:visible
 					/>
 				)}
 			</article>
