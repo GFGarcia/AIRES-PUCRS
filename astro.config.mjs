@@ -5,6 +5,10 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
+
+import { satteri } from '@astrojs/markdown-satteri';
+
+import { publicImageAttrs } from './src/lib/public-image-attrs.mjs';
 // Canonical origin of the deployed site. Override per environment with SITE_URL
 // (e.g. a Netlify/Vercel deploy preview) — everything else derives from `Astro.site`.
 const site = process.env.SITE_URL ?? 'https://www.airespucrs.org';
@@ -103,6 +107,13 @@ export default defineConfig({
       }
     }
   ],
+
+  markdown: {
+    // Gives `public/`-hosted markdown images (the animated WebP/GIF that can't go
+    // through astro:assets) the intrinsic size and lazy loading the pipeline
+    // would have added. See src/lib/public-image-attrs.mjs.
+    processor: satteri({ hastPlugins: [publicImageAttrs] })
+  },
 
   image: {
     // Emit responsive srcset/sizes for <Image>/<Picture> and markdown images.
