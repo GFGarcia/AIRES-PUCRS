@@ -149,23 +149,28 @@ const structuredData = {
 
 		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-		<!-- Runs before first paint so a locale redirect never flashes the wrong language. -->
+		<!--
+			Runs before first paint so the locale redirect never flashes the wrong language.
+			Scoped to the home page on purpose: deep links keep whatever language they were
+			requested in, so a crawler (whose `navigator.language` is en-US) can't be bounced
+			off the Portuguese pages it is indexing. Only the language switcher persists a
+			choice — this script never overwrites one.
+		-->
 		<script is:inline define:vars={{ currentLocale, locales: [...locales], defaultLocale }}>
-			const KEY = 'aires-locale-selected';
-			try {
-				const stored = localStorage.getItem(KEY);
-				if (!stored) {
-					const preferred = (navigator.language || '').toLowerCase();
-					const match = locales.find((l) => preferred.startsWith(l)) || defaultLocale;
-					localStorage.setItem(KEY, match);
-					if (currentLocale === defaultLocale && match !== defaultLocale) {
-						location.replace('/' + match + location.pathname + location.search);
+			if (location.pathname === '/' && currentLocale === defaultLocale) {
+				const KEY = 'aires-locale-selected';
+				try {
+					if (!localStorage.getItem(KEY)) {
+						const preferred = (navigator.language || '').toLowerCase();
+						const match = locales.find((l) => preferred.startsWith(l)) || defaultLocale;
+						localStorage.setItem(KEY, match);
+						if (match !== defaultLocale) {
+							location.replace('/' + match + '/' + location.search + location.hash);
+						}
 					}
-				} else if (stored !== currentLocale) {
-					localStorage.setItem(KEY, currentLocale);
+				} catch {
+					// localStorage unavailable (privacy mode, etc.) — skip auto-detection
 				}
-			} catch {
-				// localStorage unavailable (privacy mode, etc.) — skip auto-detection
 			}
 		</script>
 	</head>
