@@ -36,7 +36,7 @@ const t = useTranslations(currentLocale);
 							href='https://portal.pucrs.br/ensino/escola-de-humanidades/'
 							target='_blank'
 							rel='noreferrer noopener'
-							class='font-medium text-primary underline-offset-4 hover:underline'
+							class='font-medium text-primary-strong underline-offset-4 hover:underline'
 						>
 							{t("contact.locationLinkText")}
 						</a>{" "}
@@ -67,6 +67,10 @@ const t = useTranslations(currentLocale);
 					<Image
 						src={logo}
 						alt={t("contact.imageAlt")}
+						widths={[256, 320, 384]}
+						sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, 256px"
+						format="avif"
+						quality={45}
 						class='mx-auto h-auto w-full max-w-64 sm:max-w-80 lg:max-w-96'
 					/>
 				</div>

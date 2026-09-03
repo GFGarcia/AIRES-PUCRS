@@ -44,7 +44,7 @@ const entries = (await getLocalizedCollection(collection, currentLocale)).sort(
 										href={`/${basePath}/${slug}`}
 										class="group block h-full rounded-2xl border border-border p-5 transition-colors duration-200 hover:border-primary focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 sm:p-6"
 									>
-										<h2 class="text-lg font-semibold text-foreground transition-colors group-hover:text-primary sm:text-xl">
+										<h2 class="text-lg font-semibold text-foreground transition-colors group-hover:text-primary-strong sm:text-xl">
 											{entry.data.title}
 										</h2>
 										<p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{entry.data.description}</p>

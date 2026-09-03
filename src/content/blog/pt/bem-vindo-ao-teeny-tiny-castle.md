@@ -4,7 +4,7 @@ description: "Conheça o Teeny-Tiny Castle, repositório open-source da AIRES co
 publishDate: 2022-08-14
 ---
 
-![Bem-vindo ao Teeny-tiny castle](/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif)
+<img src="/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif" alt="Bem-vindo ao Teeny-tiny castle" width="200" height="181" style="width:200px;height:auto" loading="eager" decoding="async" />
 
 A AIRES na PUCRS está colocando à disposição do público o [teeny-tiny\_castle](https://github.com/Nkluge-correa/teeny-tiny_castle), um repositório de código destinado a fornecer ferramentas a pesquisadores interessados em trabalhar com questões que envolvem ética e segurança da IA utilizando [_Python_](https://www.python.org/).
 
@@ -14,31 +14,31 @@ Neste repositório, você encontrará _notebooks e scripts_ mostrando como criar
 
 Todos os requisitos e instruções passo-a-passo podem ser encontraos no [teeny-tiny\_castle](https://github.com/Nkluge-correa/teeny-tiny_castle). Lá você irá encontrará uma série de tutoriais, exemplos, e ferramentas para trabalhar com questões relacionadas a:
 
-#### _Ética da IA (Diretrizes,_ [_Governaça_](https://www.airespucrs.org/nota-tecnica-aires)_, Regulamentação, P&D)._
+## _Ética da IA (Diretrizes,_ [_Governaça_](https://www.airespucrs.org/nota-tecnica-aires)_, Regulamentação, P&D)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-2.png)
 
-#### _Sustentabilidade no desenvolvimento de grandes modelos (como medir e quantificar a_ [_pegada de carbono_](https://codecarbon.io/) _de modelos treinados por ML)._
+## _Sustentabilidade no desenvolvimento de grandes modelos (como medir e quantificar a_ [_pegada de carbono_](https://codecarbon.io/) _de modelos treinados por ML)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-3.jpg)
 
-#### _Interpretabilidade e robustez em visão computacional (ferramentas para_ [_XAI_](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence) _e Adversarial ML)._
+## _Interpretabilidade e robustez em visão computacional (ferramentas para_ [_XAI_](https://en.wikipedia.org/wiki/Explainable_artificial_intelligence) _e Adversarial ML)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-4.png)
 
-#### _Interpretabilidade e Robustez em PLN (_[_LIME_](https://arxiv.org/abs/1602.04938) _para PNL, Playgrounds para engenharia de prompt, exemplos de text mining)._
+## _Interpretabilidade e Robustez em PLN (_[_LIME_](https://arxiv.org/abs/1602.04938) _para PNL, Playgrounds para engenharia de prompt, exemplos de text mining)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-5.jpg)
 
-#### _Interpretabilidade na classificação e predição com dados tabulares (como_ [_explicar classificações divergentes_](https://dalex.drwhy.ai/) _de modelos desenvolvidos por ML)._
+## _Interpretabilidade na classificação e predição com dados tabulares (como_ [_explicar classificações divergentes_](https://dalex.drwhy.ai/) _de modelos desenvolvidos por ML)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-6.png)
 
-#### _Equidade em aprendizagem de máquina (como_ [_medir, quantificar e remediar_](https://aif360.mybluemix.net/) _a discriminação algorítmica)._
+## _Equidade em aprendizagem de máquina (como_ [_medir, quantificar e remediar_](https://aif360.mybluemix.net/) _a discriminação algorítmica)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-7.png)
 
-#### _Segurança sistémica (como organizações devem se coordenar para_ [_proteger e preservar_](http://password-security.airespucrs.org/) _a sua infra-estrutura de informação)._
+## _Segurança sistémica (como organizações devem se coordenar para_ [_proteger e preservar_](http://password-security.airespucrs.org/) _a sua infra-estrutura de informação)._
 
 ![](../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/content-8.jpg)
 

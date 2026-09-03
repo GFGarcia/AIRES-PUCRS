@@ -17,14 +17,16 @@ const t = useTranslations(currentLocale);
 <a
 	href={localizePath(currentLocale, '/')}
 	class:list={["flex items-center gap-2 sm:gap-3 shrink-0 transition-opacity duration-200 hover:opacity-80", className]}
-	aria-label={t('logo.homeAriaLabel')}
+	aria-label={iconOnly ? t('logo.homeAriaLabel') : undefined}
 >
 	<Image
 		src={logo}
-		alt="AIRES PUCRS logo"
+		alt=""
 		width={48}
 		height={48}
 		densities={[1, 2]}
+		format="avif"
+		quality={45}
 		loading="eager"
 		fetchpriority="high"
 		class="size-10 sm:size-12 shrink-0 object-contain"

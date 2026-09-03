@@ -23,7 +23,7 @@ export function NavDropdownMenu({ label, items, comingSoonLabel, active }: Props
 				<button
 					type='button'
 					className={cn(
-						"flex cursor-pointer items-center gap-1 rounded-md px-3.5 py-2 text-sm font-medium whitespace-nowrap text-foreground transition-colors duration-200 hover:bg-muted/80 focus-visible:bg-accent focus-visible:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+						"flex cursor-pointer items-center gap-1 rounded-md px-3.5 py-2 text-sm font-medium whitespace-nowrap text-foreground transition-colors duration-200 hover:bg-muted/80 focus-visible:bg-accent focus-visible:text-primary-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
 						active ? "bg-muted/80" : "bg-transparent",
 					)}
 				>
