@@ -1,3 +1,16 @@
 ---
-return Astro.redirect("/en/about/board");
+import CollectionListing from "@/components/collections/CollectionListing.astro";
+import { defaultLocale, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 ---
+
+{/* Was an Astro.redirect to /en/about/board, which in a static build renders as a
+    meta-refresh — a blank page for a fixed 2 seconds before it fires. */}
+<CollectionListing
+	collection="about"
+	basePath="en/about"
+	title={t("collections.about.title")}
+	description={t("collections.about.description")}
+	emptyMessage={t("collections.about.empty")}
+/>

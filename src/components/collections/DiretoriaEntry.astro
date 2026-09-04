@@ -80,16 +80,19 @@ const t = useTranslations(Astro.currentLocale ?? defaultLocale);
 											{director.summary}
 										</p>
 
-										<div class='mt-3 w-full text-center sm:text-right'>
-											<a
-												href={director.lattes}
-												target='_blank'
-												rel='noopener noreferrer'
-												class='inline-flex items-center gap-1 rounded-md border border-primary-strong px-3 py-1.5 text-sm font-medium text-primary-strong transition-colors hover:bg-primary hover:text-primary-foreground text-right'
-											>
-												{t("diretoria.lattesLink")} <span aria-hidden='true'>›</span>
-											</a>
-										</div>
+										{director.lattes && (
+											<div class='mt-3 w-full text-center sm:text-right'>
+												<a
+													href={director.lattes}
+													target='_blank'
+													rel='noopener noreferrer'
+													aria-label={t("diretoria.lattesLinkFor", { name: director.name })}
+													class='inline-flex items-center gap-1 rounded-md border border-primary-strong px-3 py-1.5 text-sm font-medium text-primary-strong transition-colors hover:bg-primary hover:text-primary-foreground text-right'
+												>
+													{t("diretoria.lattesLink")} <span aria-hidden='true'>›</span>
+												</a>
+											</div>
+										)}
 									</div>
 								</li>
 							))}

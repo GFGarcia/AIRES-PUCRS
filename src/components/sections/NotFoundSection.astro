@@ -2,7 +2,16 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { defaultLocale, localizePath, useTranslations, type Locale } from "@/i18n/utils";
 
-const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
+interface Props {
+	/**
+	 * Rendered locale. Passed explicitly rather than read from `Astro.currentLocale` because the
+	 * 404 page renders one copy of this section per locale — it is served from whatever unmatched
+	 * URL the visitor requested, so the locale is only knowable in the browser, not at build time.
+	 */
+	locale?: Locale;
+}
+
+const currentLocale = (Astro.props.locale ?? Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslations(currentLocale);
 ---
 
