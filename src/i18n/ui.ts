@@ -83,7 +83,12 @@ export const ui = {
 		"collections.announcements.description": "Confira os comunicados e cartas abertas publicados pela AIRES PUCRS.",
 		"collections.announcements.empty": "Nenhum comunicado publicado no momento.",
 
+		"collections.about.title": "Sobre",
+		"collections.about.description": "Conheça a AIRES PUCRS: nossa diretoria e nossa missão.",
+		"collections.about.empty": "Nenhuma página disponível no momento.",
+
 		"diretoria.lattesLink": "Lattes",
+		"diretoria.lattesLinkFor": "Currículo Lattes de {name}",
 
 		"notFound.pageTitle": "Página não encontrada",
 		"notFound.metaDescription": "A página que você procura não foi encontrada.",
@@ -172,7 +177,12 @@ export const ui = {
 		"collections.announcements.description": "Check out the announcements and open letters published by AIRES PUCRS.",
 		"collections.announcements.empty": "No announcements published at the moment.",
 
+		"collections.about.title": "About",
+		"collections.about.description": "Get to know AIRES PUCRS: our board and our mission.",
+		"collections.about.empty": "No pages available at the moment.",
+
 		"diretoria.lattesLink": "Lattes",
+		"diretoria.lattesLinkFor": "{name}'s Lattes CV",
 
 		"notFound.pageTitle": "Page Not Found",
 		"notFound.metaDescription": "The page you are looking for was not found.",
