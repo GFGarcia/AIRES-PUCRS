@@ -1,7 +1,7 @@
 export const siteConfig = {
 	name: "AIRES PUCRS",
 	fullName: "AI Robotics Ethics Society",
-	email: "airespucrs@airespucrs.org",
+	email: "airespucrs@gmail.com",
 	location: "Porto Alegre, Rio Grande do Sul, Brasil",
 	streetAddress: "Av. Ipiranga, 6681 - Partenon, Porto Alegre - RS, 90619-900",
 };
