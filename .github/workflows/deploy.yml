@@ -40,8 +40,8 @@ jobs:
         with:
           node-version: 22
         env:
-          PUBLIC_WEB3FORMS_OPEN_LETTER_SIGN_UP_KEY: ${{ secrets.PUBLIC_WEB3FORMS_OPEN_LETTER_SIGN_UP_KEY }}
-          PUBLIC_WEB3FORMS_CONTACT_KEY: ${{ secrets.PUBLIC_WEB3FORMS_CONTACT_KEY }}
+          PUBLIC_WEB3FORMS_OPEN_LETTER_SIGN_UP_KEY: ${{ secrets.WEB3FORMS_SIGNUP_KEY }}
+          PUBLIC_WEB3FORMS_CONTACT_KEY: ${{ secrets.WEB3FORMS_CONTACT_KEY }}
 
   deploy:
     name: Deploy
