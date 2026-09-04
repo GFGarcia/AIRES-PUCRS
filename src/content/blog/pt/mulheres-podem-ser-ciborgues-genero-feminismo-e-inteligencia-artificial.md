@@ -2,6 +2,7 @@
 title: "Mulheres podem ser ciborgues? Gênero, Feminismo e Inteligência Artificial"
 description: "Um ensaio sobre epistemologia feminista e as implicações de gênero para o conhecimento produzido em sistemas de Inteligência Artificial."
 publishDate: 2021-12-01
+coverImage: ../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg
 ---
 
 ![Mulheres podem ser ciborgues? Gênero, Feminismo e Inteligência Artificial](../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)

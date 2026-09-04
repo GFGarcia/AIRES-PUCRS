@@ -8,6 +8,7 @@ import SiteFooter from "@/components/layout/SiteFooter.astro";
 import { OpenLetterSignupForm } from "@/components/announcements/OpenLetterSignupForm";
 import { siteConfig } from "@/data/site";
 import { defaultLocale, useTranslations } from "@/i18n/utils";
+import { formatDate } from "@/lib/format-date";
 
 interface Props {
 	entry: CollectionEntry<CollectionKey>;
@@ -15,7 +16,8 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const t = useTranslations(Astro.currentLocale ?? defaultLocale);
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const t = useTranslations(currentLocale);
 
 // Cross-locale identity for this document (drops the "pt/"/"en/" prefix from
 // entry.id) so a signature counts as "already signed" regardless of which
@@ -50,6 +52,20 @@ if (entry.data.signupForm) {
 		<main class="flex-1">
 			<article class="mx-auto max-w-7xl px-6 py-12 min-[420px]:px-7 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-24 xl:px-16 xl:py-28">
 				<h1 class="text-3xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl lg:text-6xl">{entry.data.title}</h1>
+				<p class="mt-2 text-sm text-muted-foreground">
+					<time datetime={entry.data.publishDate.toISOString()}>
+						{formatDate(entry.data.publishDate, currentLocale)}
+					</time>
+					{entry.data.updatedDate && (
+						<>
+							{" · "}
+							{t("collections.updatedOn")}{" "}
+							<time datetime={entry.data.updatedDate.toISOString()}>
+								{formatDate(entry.data.updatedDate, currentLocale)}
+							</time>
+						</>
+					)}
+				</p>
 				<p class="mt-3 text-base text-pretty text-muted-foreground sm:mt-4 sm:text-lg">{entry.data.description}</p>
 
 				<div class="prose prose-neutral prose-sm mt-8 max-w-none sm:prose-base sm:mt-10 md:mt-12 lg:prose-lg prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-foreground prose-p:text-foreground prose-a:text-primary-strong prose-a:no-underline prose-a:transition-colors hover:prose-a:text-primary-strong/85 hover:prose-a:underline prose-strong:text-foreground prose-li:text-foreground prose-hr:border-border">

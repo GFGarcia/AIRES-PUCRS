@@ -2,6 +2,7 @@
 title: "Data, Responsibly (Vol. 1) Mirror, Mirror"
 description: "Meet 'Mirror, Mirror,' a science comic from the Data, Responsibly series about digital accessibility and the biases produced by biased data."
 publishDate: 2022-04-03
+coverImage: ../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif
 ---
 
 ![Data, Responsibly (Vol. 1) Mirror, Mirror](../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)

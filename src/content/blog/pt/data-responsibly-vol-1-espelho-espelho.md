@@ -2,6 +2,7 @@
 title: "Data, Responsibly (Vol. 1) Espelho, Espelho"
 description: "Conheça 'Espelho, Espelho', quadrinho científico da série Data, Responsibly sobre acessibilidade digital e os preconceitos gerados por dados tendenciosos."
 publishDate: 2022-04-03
+coverImage: ../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif
 ---
 
 ![Data, Responsibly (Vol. 1) Espelho, Espelho](../../../assets/blog/data-responsibly-vol-1-espelho-espelho/cover.avif)

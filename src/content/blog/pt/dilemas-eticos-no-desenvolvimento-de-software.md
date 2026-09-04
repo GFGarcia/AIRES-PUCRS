@@ -2,6 +2,7 @@
 title: "Dilemas éticos no Desenvolvimento de Software ⚖️🖥️"
 description: "Convite para participar da pesquisa sobre os dilemas éticos enfrentados por profissionais de Tecnologia da Informação."
 publishDate: 2023-09-06
+coverImage: ../../../assets/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.webp
 ---
 
 ![Dilemas éticos no Desenvolvimento de Software ⚖️🖥️](/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.webp)

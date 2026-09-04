@@ -2,6 +2,7 @@
 title: "Ai.ra - The AIRES Expert"
 description: "Meet Ai.ra, AIRES's expert chatbot on artificial intelligence, ethics, and AI safety."
 publishDate: 2022-06-04
+coverImage: ../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif
 ---
 
 ![Ai.ra - The AIRES Expert](../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif)

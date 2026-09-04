@@ -2,6 +2,7 @@
 title: "Ai.ra - A Expert da AIRES"
 description: "Conheça a Ai.ra, o chatbot especialista da AIRES em inteligência artificial, ética e segurança da IA."
 publishDate: 2022-06-04
+coverImage: ../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif
 ---
 
 ![Ai.ra - A Expert da AIRES](../../../assets/blog/ai-ra-aires-artificial-expert/cover.avif)

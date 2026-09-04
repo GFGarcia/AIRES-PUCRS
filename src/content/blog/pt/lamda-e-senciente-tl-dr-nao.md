@@ -2,6 +2,7 @@
 title: "LaMDA é senciente? TL:DR, Não."
 description: "Um post técnico desconstruindo a alegação de que o LaMDA, modelo de linguagem do Google, seria senciente."
 publishDate: 2022-06-21
+coverImage: ../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png
 ---
 
 ![LaMDA é senciente? TL:DR, Não.](../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png)

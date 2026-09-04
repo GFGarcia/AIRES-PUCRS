@@ -2,6 +2,7 @@
 title: "Auditabilidade e Modelos Black-Box: O Brasil e a Votação Eletrônica"
 description: "Como redundância, aleatoriedade e auditoria garantem a robustez e a transparência do sistema brasileiro de votação eletrônica."
 publishDate: 2022-11-14
+coverImage: ../../../assets/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg
 ---
 
 ![Auditabilidade e Modelos Black-Box: O Brasil e a Votação Eletrônica](../../../assets/blog/auditabilidade-e-modelos-black-box-o-brasil-e-a-votacao-eletronica/cover.jpg)

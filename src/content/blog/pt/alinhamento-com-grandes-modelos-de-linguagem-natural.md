@@ -2,6 +2,7 @@
 title: "Alinhamento com (Grandes) Modelos de Linguagem Natural"
 description: "Testando como modelos de linguagem pré-treinados podem produzir comportamentos indesejados, e por que o alinhamento com valores humanos importa."
 publishDate: 2021-10-21
+coverImage: ../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png
 ---
 
 ![Alinhamento com Grandes Modelos de Linguagem Natural](../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)

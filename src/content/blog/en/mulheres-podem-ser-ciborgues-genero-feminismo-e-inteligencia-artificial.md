@@ -2,6 +2,7 @@
 title: "Can Women Be Cyborgs? Gender, Feminism, and Artificial Intelligence"
 description: "An essay on feminist epistemology and the implications of gender for the knowledge produced within Artificial Intelligence systems."
 publishDate: 2021-12-01
+coverImage: ../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg
 ---
 
 ![Can Women Be Cyborgs? Gender, Feminism, and Artificial Intelligence](../../../assets/blog/mulheres-podem-ser-ciborgues-genero-feminismo-e-inteligencia-artificial/cover.jpg)

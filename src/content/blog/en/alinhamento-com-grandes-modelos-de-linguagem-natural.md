@@ -2,6 +2,7 @@
 title: "Alignment with (Large) Natural Language Models"
 description: "Testing how pre-trained language models can produce undesired behaviors, and why alignment with human values matters."
 publishDate: 2021-10-21
+coverImage: ../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png
 ---
 
 ![Alignment with Large Natural Language Models](../../../assets/blog/alinhamento-com-grandes-modelos-de-linguagem-natural/cover.png)

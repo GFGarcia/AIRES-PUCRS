@@ -2,6 +2,7 @@
 title: "Is LaMDA Sentient? TL;DR, No."
 description: "A technical post deconstructing the claim that LaMDA, Google's language model, is sentient."
 publishDate: 2022-06-21
+coverImage: ../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png
 ---
 
 ![Is LaMDA Sentient? TL;DR, No.](../../../assets/blog/lamda-e-senciente-tl-dr-nao/cover.png)

@@ -2,6 +2,7 @@
 title: "Welcome to Teeny-Tiny Castle"
 description: "Meet Teeny-Tiny Castle, AIRES's open-source repository with tools and tutorials on AI ethics and safety."
 publishDate: 2022-08-14
+coverImage: ../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif
 ---
 
 <img src="/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif" alt="Welcome to Teeny-Tiny Castle" width="200" height="181" style="width:200px;height:auto" loading="eager" decoding="async" />

@@ -2,6 +2,7 @@
 title: "TeenyTinyLlama: pequenos modelos de linguagem de código aberto treinados em Português 🦙"
 description: "TeenyTinyLlama, um par de modelos de linguagem compactos e open-source treinados em português do Brasil."
 publishDate: 2024-01-30
+coverImage: ../../../assets/blog/teenytinyllama-pequenos-modelos-de-linguagem-de-codigo-aberto-treinados-em-portugues/cover.png
 ---
 
 ![TeenyTinyLlama: pequenos modelos de linguagem de código aberto treinados em Português 🦙](../../../assets/blog/teenytinyllama-pequenos-modelos-de-linguagem-de-codigo-aberto-treinados-em-portugues/cover.png)

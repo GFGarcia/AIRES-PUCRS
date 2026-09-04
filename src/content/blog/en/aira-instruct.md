@@ -2,6 +2,7 @@
 title: "Aira-Instruct 🤗"
 description: "Aira-Instruct, a new series of language models fine-tuned via instruction-tuning and RLHF, released in Portuguese and English."
 publishDate: 2023-06-28
+coverImage: ../../../assets/blog/aira-instruct/cover.png
 ---
 
 ![Aira-Instruct 🤗](../../../assets/blog/aira-instruct/cover.png)

@@ -2,6 +2,7 @@
 title: "Ethical Dilemmas in Software Development ⚖️🖥️"
 description: "An invitation to take part in research on the ethical dilemmas faced by Information Technology professionals."
 publishDate: 2023-09-06
+coverImage: ../../../assets/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.webp
 ---
 
 ![Ethical Dilemmas in Software Development ⚖️🖥️](/blog/dilemas-eticos-no-desenvolvimento-de-software/cover.webp)

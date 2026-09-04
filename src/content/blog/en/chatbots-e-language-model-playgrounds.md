@@ -2,6 +2,7 @@
 title: "Chatbots and Language Model Playgrounds"
 description: "The new version of Ai.ra and the AIRES Alignment Playground, tools for exploring chatbots and the alignment of large language models."
 publishDate: 2023-01-26
+coverImage: ../../../assets/blog/chatbots-e-language-model-playgrounds/cover.png
 ---
 
 ![Chatbots and Language Model Playgrounds](../../../assets/blog/chatbots-e-language-model-playgrounds/cover.png)

@@ -2,6 +2,7 @@
 title: "Bem-vindo ao Teeny-tiny castle"
 description: "Conheça o Teeny-Tiny Castle, repositório open-source da AIRES com ferramentas e tutoriais sobre ética e segurança da IA."
 publishDate: 2022-08-14
+coverImage: ../../../assets/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif
 ---
 
 <img src="/blog/bem-vindo-ao-teeny-tiny-castle/cover.gif" alt="Bem-vindo ao Teeny-tiny castle" width="200" height="181" style="width:200px;height:auto" loading="eager" decoding="async" />
