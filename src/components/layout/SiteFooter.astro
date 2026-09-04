@@ -70,7 +70,8 @@ const footerLinks = getPrimaryNav(t)
 
 	<div class="border-t border-border">
 		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
-			{t("footer.copyright", { year: siteConfig.year, fullName: siteConfig.fullName })}
+			{/* Computed rather than a stored config value, which would otherwise silently go stale. */}
+			{t("footer.copyright", { year: new Date().getFullYear(), fullName: siteConfig.fullName })}
 		</p>
 	</div>
 </footer>
