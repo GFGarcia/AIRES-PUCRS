@@ -3,17 +3,54 @@ import Layout from '@/layouts/Layout.astro';
 import SiteHeader from '@/components/layout/SiteHeader.astro';
 import SiteFooter from '@/components/layout/SiteFooter.astro';
 import NotFoundSection from '@/components/sections/NotFoundSection.astro';
-import { defaultLocale, useTranslations } from '@/i18n/utils';
+import { defaultLocale, locales, useTranslations, type Locale } from '@/i18n/utils';
 
-const t = useTranslations(Astro.currentLocale ?? defaultLocale);
+/**
+ * A single 404 for every locale.
+ *
+ * Static hosts serve one `404.html` for any unmatched path, so `/en/does-not-exist` gets this exact
+ * file too — there is no separate English copy to serve, and the requested locale is not knowable
+ * at build time. So every locale's copy is rendered here, hidden, and the inline script below
+ * reveals whichever one matches the URL the visitor actually requested.
+ *
+ * Without JavaScript the default locale shows, which is the correct fallback.
+ */
+const t = useTranslations(defaultLocale);
+
+const htmlLangByLocale: Record<Locale, string> = { pt: 'pt-BR', en: 'en' };
+const titleByLocale = Object.fromEntries(
+	locales.map((locale) => [locale, useTranslations(locale)('notFound.pageTitle')]),
+);
 ---
 
 <Layout title={t('notFound.pageTitle')} description={t('notFound.metaDescription')} noindex>
 	<div class="flex min-h-screen flex-col">
 		<SiteHeader />
 		<main class="flex flex-1 items-center">
-			<NotFoundSection />
+			{
+				locales.map((locale) => (
+					<div data-locale={locale} hidden={locale !== defaultLocale}>
+						<NotFoundSection locale={locale} />
+					</div>
+				))
+			}
 		</main>
 		<SiteFooter />
 	</div>
+
+	<script is:inline define:vars={{ locales: [...locales], defaultLocale, htmlLangByLocale, titleByLocale }}>
+		(() => {
+			const segment = window.location.pathname.split('/')[1];
+			const locale = locales.includes(segment) ? segment : defaultLocale;
+			if (locale === defaultLocale) return;
+
+			for (const candidate of locales) {
+				const block = document.querySelector(`[data-locale="${candidate}"]`);
+				if (block) block.hidden = candidate !== locale;
+			}
+
+			document.documentElement.lang = htmlLangByLocale[locale];
+			if (titleByLocale[locale]) document.title = titleByLocale[locale];
+		})();
+	</script>
 </Layout>
