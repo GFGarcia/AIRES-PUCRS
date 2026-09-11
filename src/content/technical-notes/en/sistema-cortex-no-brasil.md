@@ -12,4 +12,4 @@ In this document, **_Mass Surveillance and Data Protection: Implications of the 
 
 We hope our work can be used to **inform and broaden the discussion about the use of monitoring systems** for public security purposes.
 
-[Download](https://www.airespucrs.org/en/_files/ugd/610db7_72fb2e1cf3ee448984d4374bc9518ff7.pdf)
+[Download](/downloads/technical-notes/nt_cortex.pdf)

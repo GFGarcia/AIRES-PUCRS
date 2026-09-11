@@ -12,4 +12,4 @@ Neste documento **_Vigilância Em Massa E Proteção De Dados: Implicações Do 
 
 Esperamos que nosso trabalho possa ser utilizado para **informar e ampliar a discussão a respeito da utilização de sistemas de monitoramento para fins de segurança pública**.
 
-[Download](https://www.airespucrs.org/en/_files/ugd/610db7_72fb2e1cf3ee448984d4374bc9518ff7.pdf)
+[Download](/downloads/technical-notes/nt_cortex.pdf)

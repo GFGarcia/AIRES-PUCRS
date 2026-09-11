@@ -12,4 +12,4 @@ We hope our work can be used to **inform the discussion about the use of FRTs** 
 
 The full note can be accessed via the link below.
 
-[Download](https://www.airespucrs.org/en/_files/ugd/c8f8f4_d02162701cab43238dd3beac5f8b4602.pdf)
+[Download](/downloads/technical-notes/nt_riscos.pdf)

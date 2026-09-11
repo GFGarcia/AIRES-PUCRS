@@ -32,4 +32,4 @@ In order to contribute to the ethical-normative guidance already proposed by Bil
 
 Our Technical Note can be downloaded via the button below.
 
-[Download](https://www.airespucrs.org/en/_files/ugd/c8f8f4_d85ae97eab1c42fc859ff6ad11c80e9b.pdf)
+[Download](/downloads/technical-notes/nt_pl_21_20_pl_5051_19_pl_872_21.pdf)

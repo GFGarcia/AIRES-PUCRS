@@ -12,4 +12,4 @@ Esperamos que nosso trabalho possa ser utilizado para **informar a discussão a 
 
 A nota completa pode ser acessada no link abaixo.
 
-[Download](https://www.airespucrs.org/en/_files/ugd/c8f8f4_d02162701cab43238dd3beac5f8b4602.pdf)
+[Download](/downloads/technical-notes/nt_riscos.pdf)
