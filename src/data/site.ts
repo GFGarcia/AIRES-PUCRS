@@ -9,7 +9,7 @@ export const siteConfig = {
 export interface SocialLink {
 	label: string;
 	href: string;
-	icon: "instagram" | "discord";
+	icon: "instagram" | "discord" | "youtube";
 }
 
 export const socialLinks: SocialLink[] = [
@@ -19,4 +19,5 @@ export const socialLinks: SocialLink[] = [
 		icon: "instagram",
 	},
 	{ label: "Discord", href: "https://discord.gg/svqnu3GNeV", icon: "discord" },
+	{ label: "YouTube", href: "https://www.youtube.com/@AIRES-PUCRS", icon: "youtube" },
 ];
