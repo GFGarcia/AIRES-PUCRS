@@ -1,13 +1,20 @@
 ---
 import DiscordIcon from "@/components/icons/DiscordIcon.astro";
 import InstagramIcon from "@/components/icons/InstagramIcon.astro";
+import YoutubeIcon from "@/components/icons/YoutubeIcon.astro";
 import { isNavDropdown, getPrimaryNav, type NavLink } from "@/data/navigation";
 import { siteConfig, socialLinks } from "@/data/site";
-import { defaultLocale, localizeHref, useTranslations, type Locale } from "@/i18n/utils";
+import {
+	defaultLocale,
+	localizeHref,
+	useTranslations,
+	type Locale,
+} from "@/i18n/utils";
 
 const iconComponents = {
 	instagram: InstagramIcon,
 	discord: DiscordIcon,
+	youtube: YoutubeIcon,
 } as const;
 
 const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
@@ -18,26 +25,32 @@ const footerLinks = getPrimaryNav(t)
 	.map((link) => ({ ...link, href: localizeHref(currentLocale, link.href) }));
 ---
 
-<footer class="border-t border-border bg-muted">
-	<div class="mx-auto max-w-7xl px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-16 sm:py-20">
-		<div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+<footer class='border-t border-border bg-muted'>
+	<div
+		class='mx-auto max-w-7xl px-6 min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-16 sm:py-20'
+	>
+		<div
+			class='flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between'
+		>
 			<div>
-				<div class="max-w-md">
-					<p class="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
-						AIRES<sup class="text-[0.55em] font-normal">®</sup> PUCRS
+				<div class='max-w-md'>
+					<p
+						class='text-xl sm:text-2xl font-semibold tracking-tight text-foreground'
+					>
+						AIRES<sup class='text-[0.55em] font-normal'>®</sup> PUCRS
 					</p>
-					<div class="mt-3 sm:mt-4 h-0.5 w-20 sm:w-24 bg-primary"></div>
+					<div class='mt-3 sm:mt-4 h-0.5 w-20 sm:w-24 bg-primary'></div>
 				</div>
 
 				<nav
 					aria-label={t("nav.ariaFooter")}
-					class="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:flex lg:flex-wrap lg:gap-12"
+					class='mt-6 grid grid-cols-2 gap-x-6 gap-y-3 min-[420px]:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:flex lg:flex-wrap lg:gap-12'
 				>
 					{
 						footerLinks.map((link) => (
 							<a
 								href={link.href}
-								class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary-strong"
+								class='text-sm font-medium text-muted-foreground transition-colors hover:text-primary-strong'
 							>
 								{link.label}
 							</a>
@@ -46,9 +59,13 @@ const footerLinks = getPrimaryNav(t)
 				</nav>
 			</div>
 
-			<div class="lg:pt-1">
-				<p class="text-xs font-semibold tracking-widest text-muted-foreground uppercase">{t("footer.social")}</p>
-				<div class="mt-4 flex items-center gap-4 sm:gap-5">
+			<div class='lg:pt-1'>
+				<p
+					class='text-xs font-semibold tracking-widest text-muted-foreground uppercase'
+				>
+					{t("footer.social")}
+				</p>
+				<div class='mt-4 flex items-center gap-4 sm:gap-5'>
 					{
 						socialLinks.map((social) => {
 							const Icon = iconComponents[social.icon];
@@ -56,9 +73,9 @@ const footerLinks = getPrimaryNav(t)
 								<a
 									href={social.href}
 									aria-label={social.label}
-									class="inline-flex -m-1.5 items-center justify-center rounded-full p-1.5 text-foreground transition-all duration-200 hover:text-primary"
+									class='inline-flex -m-1.5 items-center justify-center rounded-full p-1.5 text-foreground transition-all duration-200 hover:text-primary'
 								>
-									<Icon class="size-6" />
+									<Icon class='size-8' />
 								</a>
 							);
 						})
@@ -68,10 +85,19 @@ const footerLinks = getPrimaryNav(t)
 		</div>
 	</div>
 
-	<div class="border-t border-border">
-		<p class="mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16">
-			{/* Computed rather than a stored config value, which would otherwise silently go stale. */}
-			{t("footer.copyright", { year: new Date().getFullYear(), fullName: siteConfig.fullName })}
+	<div class='border-t border-border'>
+		<p
+			class='mx-auto max-w-7xl px-6 py-6 text-center text-sm text-muted-foreground min-[420px]:px-7 sm:px-8 md:px-10 lg:px-12 xl:px-16'
+		>
+			{
+				/* Computed rather than a stored config value, which would otherwise silently go stale. */
+			}
+			{
+				t("footer.copyright", {
+					year: new Date().getFullYear(),
+					fullName: siteConfig.fullName,
+				})
+			}
 		</p>
 	</div>
 </footer>
